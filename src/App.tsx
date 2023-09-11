@@ -1,9 +1,10 @@
+import Navigation from './Components/Navigation/Navigation';
 import './styles/app.scss';
 
 function App() {
 	return (
 		<>
-			<h1>Zita's Portfolio</h1>
+			<Navigation />
 		</>
 	);
 }
