@@ -1,0 +1,29 @@
+@import './colors.scss';
+@import './fonts.scss';
+
+*,
+*::before,
+*::after {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+img {
+	display: block;
+}
+
+/* ============================== DEFAULT ================================*/
+#root {
+	width: 100vw;
+	height: 100vh;
+	overflow: hidden;
+	background-color: $light-background;
+}
+
+body {
+	font-family: $default-font;
+	font-size: 1rem;
+	color: $dark-text;
+	background-color: $light-background;
+}
