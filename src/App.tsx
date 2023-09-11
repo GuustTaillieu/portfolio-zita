@@ -1,8 +1,11 @@
-import React from 'react';
-import './App.css';
+import './App.scss';
 
 function App() {
-	return <div className='App'></div>;
+	return (
+		<>
+			<h1>Zita's Portfolio</h1>
+		</>
+	);
 }
 
 export default App;
