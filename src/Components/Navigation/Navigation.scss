@@ -1,0 +1,24 @@
+@import '../../styles/fonts.scss';
+@import '../../styles/sizes.scss';
+
+nav {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	max-width: min(100% - 3rem, $desktop-size);
+	margin: 0 auto;
+
+	a {
+		text-decoration: none;
+		color: inherit;
+
+		h1,
+		h2 {
+			text-transform: uppercase;
+			cursor: pointer;
+			padding: 1rem;
+			font-family: $secondary-font;
+			font-size: $small-text;
+		}
+	}
+}
