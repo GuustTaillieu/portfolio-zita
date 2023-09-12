@@ -1,14 +1,17 @@
 import './Navigation.scss';
+import { Link } from 'react-router-dom';
 
-const Navigation = () => {
+type Props = {};
+
+const Navigation = (props: Props) => {
 	return (
 		<nav>
-			<a href='#'>
+			<Link to='/'>
 				<h1>Zita Worm</h1>
-			</a>
-			<a href='#'>
+			</Link>
+			<Link to='/contact'>
 				<h2>Contact</h2>
-			</a>
+			</Link>
 		</nav>
 	);
 };
