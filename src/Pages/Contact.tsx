@@ -1,9 +1,14 @@
-import React from 'react';
+import { defaultPageTransition } from '../transitions';
 
 type Props = {};
 
 const Contact = (props: Props) => {
-	return <h2>Contact</h2>;
+	return (
+		<div className='contact'>
+			<h2>Contact</h2>
+			<p>Welcome to the contact page</p>
+		</div>
+	);
 };
 
-export default Contact;
+export default defaultPageTransition(Contact);
