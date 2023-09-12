@@ -1,1 +1,16 @@
 @import 'colors.scss';
+
+.page-transition-in,
+.page-transition-out {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: $dark-background;
+	transform-origin: top;
+}
+
+.page-transition-in {
+	transform-origin: bottom;
+}

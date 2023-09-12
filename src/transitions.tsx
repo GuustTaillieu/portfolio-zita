@@ -1,17 +1,15 @@
 import { motion } from 'framer-motion';
-import './styles/transitions.scss';
 
-const defaultPageTransition = (OgComponent: any) => {
-	return () => (
+const PageTransition = ({ children }: { children: React.ReactNode }) => {
+	return (
 		<motion.div
-			className='default-page-transition'
-			initial={{ x: '100%' }}
-			animate={{ x: 0 }}
-			exit={{ x: '-100%' }}
+			initial={{ x: 300, opacity: 0 }}
+			animate={{ x: 0, opacity: 1 }}
+			exit={{ x: -300, opacity: 0 }}
 			transition={{ duration: 0.3 }}>
-			<OgComponent />
+			{children}
 		</motion.div>
 	);
 };
 
-export { defaultPageTransition };
+export { PageTransition };
