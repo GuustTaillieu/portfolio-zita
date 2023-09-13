@@ -1,0 +1,40 @@
+.home {
+	overflow: hidden;
+
+	.gallery_box {
+		position: fixed;
+		top: 50%;
+		right: 20%;
+
+		.gallery_box_outer {
+			width: 150px;
+			height: 200px;
+			position: relative;
+			transition: all 1s ease-out;
+			transform-style: preserve-3d;
+			transform: perspective(1000px)
+				rotateX(calc(var(--scroll) * calc(360deg / 13)));
+
+			.gallery_box_in {
+				width: 100%;
+				height: 100%;
+				position: absolute;
+				background-image: url('https://source.unsplash.com/random/300x300');
+				background-position: center center;
+				background-size: cover;
+				transform: rotateX(calc(var(--i) * calc(360deg / 13)))
+					translateZ(566px);
+				backface-visibility: hidden;
+			}
+		}
+	}
+}
+
+@keyframes spin {
+	0% {
+		transform: perspective(1000px) rotateX(0deg);
+	}
+	100% {
+		transform: perspective(1000px) rotateX(360deg);
+	}
+}
