@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { PageTransition } from '../transitions';
+import { PageTransition } from '../../transitions';
 
 type Props = {};
 

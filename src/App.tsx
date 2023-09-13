@@ -3,8 +3,8 @@ import Navigation from './Components/Navigation/Navigation';
 import './styles/app.scss';
 import './styles/transitions.scss';
 import { Route, Routes, useLocation } from 'react-router-dom';
-import Contact from './Pages/Contact';
-import Home from './Pages/Home';
+import Contact from './Pages/Contacts/Contact';
+import Home from './Pages/Home/Home';
 
 function App() {
 	const location = useLocation();
