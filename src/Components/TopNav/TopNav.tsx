@@ -1,4 +1,4 @@
-import './Navigation.scss';
+import './TopNav.scss';
 import { Link } from 'react-router-dom';
 
 type Props = {};
