@@ -1,9 +1,9 @@
 import { AnimatePresence } from 'framer-motion';
-import Navigation from './Components/Navigation/Navigation';
+import Navigation from './Components/TopNav/TopNav';
 import './styles/app.scss';
 import './styles/transitions.scss';
 import { Route, Routes, useLocation } from 'react-router-dom';
-import Contact from './Pages/Contacts/Contact';
+import Contact from './Pages/Contact/Contact';
 import Home from './Pages/Home/Home';
 
 function App() {

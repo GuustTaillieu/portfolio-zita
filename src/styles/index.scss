@@ -1,5 +1,6 @@
 @import './colors.scss';
 @import './fonts.scss';
+@import './sizes.scss';
 
 *,
 *::before,
@@ -23,4 +24,11 @@ body {
 	font-size: 1rem;
 	color: $dark-text;
 	background-color: $light-background;
+}
+
+/* ============================== MEDIA QUERIES ================================*/
+@media (min-width: $mobile-size) {
+	.mobile {
+		display: none;
+	}
 }
