@@ -32,3 +32,15 @@ body {
 		display: none;
 	}
 }
+
+@media (max-width: $tablet-size) {
+	.tablet {
+		display: none;
+	}
+}
+
+@media (min-width: $desktop-size) {
+	.desktop {
+		display: none;
+	}
+}
