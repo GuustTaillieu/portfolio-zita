@@ -1,3 +1,5 @@
 $desktop-size: 90rem;
 $tablet-size: 60rem;
 $mobile-size: 30rem;
+
+$responsive-desktop: min(100% - 3rem, $desktop-size);

@@ -1,7 +1,7 @@
-import about_me from '../../../public/images/about_me.png';
-import projects from '../../../public/images/projects.jpg';
-import skills from '../../../public/images/skills.jpg';
-import experience from '../../../public/images/experience.png';
+import about_me from '/images/about_me.png';
+import projects from '/images/projects.jpg';
+import skills from '/images/skills.jpg';
+import experience from '/images/experience.png';
 
 const SCROLL_NAV_ITEMS: Array<{ title: string; image: string }> = [
 	{

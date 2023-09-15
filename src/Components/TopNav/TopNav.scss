@@ -9,7 +9,7 @@ nav {
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-	width: min(100% - 3rem, $desktop-size);
+	width: $responsive-desktop;
 
 	a {
 		text-decoration: none;

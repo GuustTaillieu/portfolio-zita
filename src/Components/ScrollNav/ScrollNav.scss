@@ -1,28 +1,74 @@
-.gallery_box {
+@import '../../styles/colors.scss';
+@import '../../styles/sizes.scss';
+
+$image-width: 150px;
+$image-height: 200px;
+$actual-image-width: 346px;
+$actual-image-height: 461px;
+
+.scroll_nav {
 	position: fixed;
 	top: 50%;
-	right: 20%;
-	transform: translateY(-50%);
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: $responsive-desktop;
 
-	.gallery_box_outer {
-		width: 150px;
-		height: 200px;
-		position: relative;
-		transition: all 1s ease-out;
-		transform-style: preserve-3d;
-		transform: perspective(1000px)
-			rotateX(calc(var(--scroll) * calc(360deg / 13)));
+	.scroll_nav_images {
+		position: fixed;
+		top: 50%;
+		right: 20%;
+		transform: translateY(-50%) scale(1.2);
 
-		.gallery_box_in {
+		.scroll_nav_images_outer {
+			width: $image-width;
+			height: $image-height;
+			position: relative;
+			transition: all 1s ease-out;
+			transform-style: preserve-3d;
+			transform: perspective(1000px)
+				rotateX(calc(var(--scroll) * calc(360deg / 13)));
+
+			.scroll_nav_images_in {
+				width: 100%;
+				height: 100%;
+				position: absolute;
+				background-image: url('https://source.unsplash.com/random/300x300');
+				background-position: center center;
+				background-size: cover;
+				transform: rotateX(calc(var(--i) * calc(360deg / 13)))
+					translateZ(566px);
+				backface-visibility: hidden;
+			}
+		}
+	}
+
+	.scroll_nav_title {
+		position: absolute;
+		top: calc(50% + ($actual-image-height / 2) - 3rem);
+		left: 1.5rem;
+		width: 25rem;
+
+		.scroll_nav_title_outer {
 			width: 100%;
 			height: 100%;
 			position: absolute;
-			background-image: url('https://source.unsplash.com/random/300x300');
-			background-position: center center;
-			background-size: cover;
-			transform: rotateX(calc(var(--i) * calc(360deg / 13)))
-				translateZ(566px);
-			backface-visibility: hidden;
+			transition: all 1s ease-out;
+			transform-style: preserve-3d;
+			transform: perspective(1000px)
+				rotateX((calc(var(--scroll) * calc(360deg / 4))));
+
+			.scroll_nav_title_in {
+				width: 100%;
+				height: 100%;
+				position: absolute;
+				display: flex;
+				justify-content: flex-start;
+				align-items: center;
+				font-size: 4rem;
+				transform: rotateX(calc(var(--i) * calc(360deg / 4)))
+					translateZ(50px);
+				backface-visibility: hidden;
+			}
 		}
 	}
 }

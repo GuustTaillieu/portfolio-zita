@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import SCROLL_NAV_ITEMS from './scroll-nav-info';
 import './ScrollNav.scss';
 
@@ -8,13 +8,20 @@ const ScrollNav = (props: Props) => {
 	const [scrollPosition, setScrollPosition] = useState(0);
 	const [lastTime, setLastTime] = useState(0);
 
+	const galleryTitlesContainer = useRef<HTMLDivElement>(null);
+	const galleryImagesContainer = useRef<HTMLDivElement>(null);
+	const galleryTitles = useRef<HTMLDivElement[]>([]);
+	const galleryImages = useRef<HTMLDivElement[]>([]);
+
 	useEffect(() => {
-		const galleryItems = document.querySelectorAll(
-			'.gallery_box_in'
-		) as NodeListOf<HTMLDivElement>;
-		galleryItems.forEach((item, index) => {
+		galleryTitles.current.forEach((item, index) => {
 			item.style.setProperty('--i', index.toString());
 		});
+		galleryImages.current.forEach((item, index) => {
+			item.style.setProperty('--i', index.toString());
+		});
+		galleryTitlesContainer.current?.style.setProperty('--scroll', '0');
+		galleryImagesContainer.current?.style.setProperty('--scroll', '0');
 	}, []);
 
 	useEffect(() => {
@@ -26,31 +33,56 @@ const ScrollNav = (props: Props) => {
 
 	function scrollGallery(e: WheelEvent) {
 		if (e.timeStamp - lastTime < 800) return;
-		const $gallery = document.querySelector(
-			'.gallery_box_outer'
-		) as HTMLDivElement;
 		setLastTime(e.timeStamp);
 		const scrollDirection = e.deltaY > 0 ? 1 : -1;
 		const nextScrollPosition = scrollPosition + scrollDirection;
 		setScrollPosition(nextScrollPosition);
-		$gallery.style.setProperty('--scroll', nextScrollPosition.toString());
+		galleryImagesContainer.current?.style.setProperty(
+			'--scroll',
+			nextScrollPosition.toString()
+		);
+		galleryTitlesContainer.current?.style.setProperty(
+			'--scroll',
+			nextScrollPosition.toString()
+		);
 	}
 
 	return (
-		<div className='gallery_box'>
-			<div className='gallery_box_outer'>
-				{[...Array(4)].map((_) =>
-					SCROLL_NAV_ITEMS.map((item) => (
-						<div
-							className='gallery_box_in'
-							key={item.title}
-							style={{
-								backgroundImage: `url(${item.image})`,
-							}}>
-							<h2 className='mobile'>{item.title}</h2>
-						</div>
-					))
-				)}
+		<div className='scroll_nav'>
+			<div className='scroll_nav_title tablet'>
+				<div
+					className='scroll_nav_title_outer'
+					ref={galleryTitlesContainer}>
+					{[...Array(1)].map((_) =>
+						SCROLL_NAV_ITEMS.map((item) => (
+							<div
+								className='scroll_nav_title_in'
+								ref={(el) => galleryTitles.current.push(el!)}
+								key={item.title}>
+								<h2>{item.title}</h2>
+							</div>
+						))
+					)}
+				</div>
+			</div>
+			<div className='scroll_nav_images'>
+				<div
+					className='scroll_nav_images_outer'
+					ref={galleryImagesContainer}>
+					{[...Array(4)].map((_) =>
+						SCROLL_NAV_ITEMS.map((item) => (
+							<div
+								className='scroll_nav_images_in'
+								ref={(el) => galleryImages.current.push(el!)}
+								key={item.title}
+								style={{
+									backgroundImage: `url(${item.image})`,
+								}}>
+								<h2 className='mobile'>{item.title}</h2>
+							</div>
+						))
+					)}
+				</div>
 			</div>
 		</div>
 	);
