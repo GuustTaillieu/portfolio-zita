@@ -27,6 +27,7 @@ $actual-image-height: 461px;
 			transform-style: preserve-3d;
 			transform: perspective(1000px)
 				rotateX(calc(var(--scroll) * calc(360deg / 13)));
+			cursor: pointer;
 
 			.scroll_nav_images_in {
 				width: 100%;
@@ -56,6 +57,7 @@ $actual-image-height: 461px;
 			transform-style: preserve-3d;
 			transform: perspective(1000px)
 				rotateX((calc(var(--scroll) * calc(360deg / 4))));
+			cursor: pointer;
 
 			.scroll_nav_title_in {
 				width: 100%;
