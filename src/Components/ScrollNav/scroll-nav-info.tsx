@@ -5,7 +5,7 @@ import experience from '/images/experience.png';
 
 const SCROLL_NAV_ITEMS: Array<{ title: string; image: string }> = [
 	{
-		title: 'About Me',
+		title: 'About me',
 		image: about_me,
 	},
 	{
