@@ -1,4 +1,4 @@
-import about_me from '/images/about_me.png';
+import about_me from '/images/about.jpg';
 import projects from '/images/projects.jpg';
 import skills from '/images/skills.jpg';
 import experience from '/images/experience.png';

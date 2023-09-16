@@ -71,14 +71,23 @@ const ScrollNav = (props: Props) => {
 				<div
 					className='scroll_nav_title_outer'
 					ref={galleryTitlesContainer}>
-					{[...Array(1)].map((_) =>
+					{[...Array(4)].map((_) =>
 						SCROLL_NAV_ITEMS.map((item) => (
 							<div
 								className='scroll_nav_title_in'
 								onClick={handleClick}
 								ref={(el) => galleryTitles.current.push(el!)}
 								key={item.title}>
-								<h2>{item.title}</h2>
+								<motion.h2
+									initial={{ opacity: 0, y: 50 }}
+									animate={{ opacity: 1, y: 0 }}
+									transition={{
+										duration: 0.5,
+										ease: 'easeInOut',
+										delay: 0.5,
+									}}>
+									{item.title}
+								</motion.h2>
 							</div>
 						))
 					)}
