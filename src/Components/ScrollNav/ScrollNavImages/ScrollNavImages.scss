@@ -26,7 +26,7 @@
 			background-position: center center;
 			background-size: cover;
 			transform: rotateX(calc(var(--i) * calc(360deg / 16)))
-				translateZ(2300px);
+				translateZ(2200px);
 			backface-visibility: hidden;
 
 			h2 {

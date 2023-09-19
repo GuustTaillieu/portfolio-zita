@@ -1,15 +1,17 @@
 import { motion } from 'framer-motion';
+import anims from './animations';
 
-const PageTransition = ({ children }: { children: React.ReactNode }) => {
+const DefaultPageTransition = ({ children }: { children: React.ReactNode }) => {
 	return (
 		<motion.div
-			initial={{ x: 300, opacity: 0 }}
-			animate={{ x: 0, opacity: 1 }}
-			exit={{ x: -300, opacity: 0 }}
+			variants={anims.defaultPageTransition}
+			initial='initial'
+			animate='animate'
+			exit='exit'
 			transition={{ duration: 0.3 }}>
 			{children}
 		</motion.div>
 	);
 };
 
-export { PageTransition };
+export { DefaultPageTransition };
