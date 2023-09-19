@@ -11,7 +11,7 @@
 		width: $scroll-nav-image-width;
 		height: $scroll-nav-image-height;
 		position: relative;
-		transition: all 1s ease-out;
+		transition: all 0.75s ease-out;
 		transform-style: preserve-3d;
 		transform: perspective(2000px)
 			rotateX(calc(var(--scroll) * calc(360deg / 16)))

@@ -1,4 +1,4 @@
-import { AnimatePresence } from 'framer-motion';
+import { AnimatePresence, AnimateSharedLayout } from 'framer-motion';
 import Navigation from './Components/TopNav/TopNav';
 import './styles/app.scss';
 import './styles/transitions.scss';
