@@ -29,7 +29,7 @@ const ScrollNavText = (props: Props) => {
 
 	return (
 		<div className='scroll_nav_title tablet'>
-			<div
+			<motion.div
 				className='scroll_nav_title_outer'
 				ref={galleryTitlesContainer}>
 				{[...Array(4)].map((_) =>
@@ -53,7 +53,7 @@ const ScrollNavText = (props: Props) => {
 						</div>
 					))
 				)}
-			</div>
+			</motion.div>
 		</div>
 	);
 };

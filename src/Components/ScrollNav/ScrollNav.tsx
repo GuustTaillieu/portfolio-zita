@@ -4,13 +4,14 @@ import './ScrollNav.scss';
 import ScrollNavText from './ScrollNavText/ScrollNavText';
 import ScrollNavImages from './ScrollNavImages/ScrollNavImages';
 import anims from '../../animations';
+import useSection from '../../hooks/useSection';
 
-type Props = {};
+export const ANIMATION_DURATION = 600;
+type Props = { isDocked: boolean; setIsDocked: (isDocked: boolean) => void };
 
-const ScrollNav = (props: Props) => {
-	const [scrollPosition, setScrollPosition] = useState(0);
+const ScrollNav = ({ isDocked, setIsDocked }: Props) => {
+	const { scrollPosition, setScrollPosition } = useSection();
 	const [lastTime, setLastTime] = useState(0);
-	const [isAnimating, setIsAnimating] = useState(false);
 
 	useEffect(() => {
 		window.addEventListener('wheel', scrollGallery);
@@ -20,7 +21,7 @@ const ScrollNav = (props: Props) => {
 	}, [scrollPosition, lastTime]);
 
 	function scrollGallery(e: WheelEvent) {
-		if (e.timeStamp - lastTime < 800) return;
+		if (e.timeStamp - lastTime < ANIMATION_DURATION) return;
 		setLastTime(e.timeStamp);
 		const scrollDirection = e.deltaY > 0 ? 1 : -1;
 		const nextScrollPosition = scrollPosition + scrollDirection;
@@ -29,7 +30,7 @@ const ScrollNav = (props: Props) => {
 
 	const handleClick = (e: React.MouseEvent<HTMLDivElement>) => {
 		if (e.type === 'click') {
-			setIsAnimating(!isAnimating);
+			setIsDocked(!isDocked);
 		}
 	};
 
@@ -38,7 +39,7 @@ const ScrollNav = (props: Props) => {
 			className='scroll_nav'
 			variants={anims.scrollNavSlideLeftAnim}
 			initial='initial'
-			animate={isAnimating ? 'animate' : 'initial'}>
+			animate={isDocked ? 'animate' : 'initial'}>
 			<ScrollNavText
 				scrollPosition={scrollPosition}
 				handleOnClick={handleClick}

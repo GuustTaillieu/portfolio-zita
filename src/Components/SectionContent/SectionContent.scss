@@ -1,0 +1,24 @@
+@import '../../styles/colors.scss';
+@import '../../styles/fonts.scss';
+
+.section_content {
+	position: absolute;
+	top: 30%;
+	left: 50%;
+	width: 30%;
+	height: 50%;
+	pointer-events: none;
+
+	.content {
+		h3 {
+			font-size: $extra-large-text;
+			color: $dark-text;
+			margin-bottom: $large-text;
+		}
+
+		p {
+			font-size: $medium-text;
+			color: $dark-text;
+		}
+	}
+}
