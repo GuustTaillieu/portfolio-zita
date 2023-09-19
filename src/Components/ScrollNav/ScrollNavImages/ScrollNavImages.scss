@@ -1,0 +1,40 @@
+@import '../../../styles/colors.scss';
+@import '../../../styles/sizes.scss';
+
+.scroll_nav_images {
+	position: fixed;
+	top: 50%;
+	right: 7rem;
+	transform: translateY(-50%) scale(1.2);
+
+	.scroll_nav_images_outer {
+		width: $scroll-nav-image-width;
+		height: $scroll-nav-image-height;
+		position: relative;
+		transition: all 1s ease-out;
+		transform-style: preserve-3d;
+		transform: perspective(2000px)
+			rotateX(calc(var(--scroll) * calc(360deg / 16)))
+			scale3d(0.4, 0.4, 0.4);
+		cursor: pointer;
+
+		.scroll_nav_images_in {
+			width: 100%;
+			height: 100%;
+			position: absolute;
+			background-image: url('https://source.unsplash.com/random/300x300');
+			background-position: center center;
+			background-size: cover;
+			transform: rotateX(calc(var(--i) * calc(360deg / 16)))
+				translateZ(2300px);
+			backface-visibility: hidden;
+
+			h2 {
+				font-size: 3rem;
+				text-align: center;
+				color: whitesmoke;
+				text-shadow: 0.25rem 0.25rem 0.125rem #0000008c;
+			}
+		}
+	}
+}
