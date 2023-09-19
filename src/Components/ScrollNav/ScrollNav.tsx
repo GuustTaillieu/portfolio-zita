@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import './ScrollNav.scss';
 import ScrollNavText from './ScrollNavText/ScrollNavText';
 import ScrollNavImages from './ScrollNavImages/ScrollNavImages';
-import { scrollNavSlideLeftAnim } from '../../animations';
+import anims from '../../animations';
 
 type Props = {};
 
@@ -36,10 +36,9 @@ const ScrollNav = (props: Props) => {
 	return (
 		<motion.div
 			className='scroll_nav'
+			variants={anims.scrollNavSlideLeftAnim}
 			initial='initial'
-			transition={{ duration: 0.5, ease: [0.6, 0.05, -0.01, 0.9] }}
-			animate={isAnimating ? 'animate' : 'initial'}
-			variants={scrollNavSlideLeftAnim}>
+			animate={isAnimating ? 'animate' : 'initial'}>
 			<ScrollNavText
 				scrollPosition={scrollPosition}
 				handleOnClick={handleClick}

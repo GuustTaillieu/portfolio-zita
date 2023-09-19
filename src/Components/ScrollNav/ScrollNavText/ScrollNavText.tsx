@@ -2,6 +2,7 @@ import React, { useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
 import SCROLL_NAV_ITEMS from '../scroll-nav-info';
 import './ScrollNavText.scss';
+import anims from '../../../animations';
 
 type Props = {
 	scrollPosition: number;
@@ -39,8 +40,9 @@ const ScrollNavText = (props: Props) => {
 							ref={(el) => galleryTitles.current.push(el!)}
 							key={item.title}>
 							<motion.h2
-								initial={{ opacity: 0, y: 50 }}
-								animate={{ opacity: 1, y: 0 }}
+								variants={anims.scrollNavTextAnim}
+								initial='initial'
+								animate='animate'
 								transition={{
 									duration: 0.5,
 									ease: 'easeInOut',
