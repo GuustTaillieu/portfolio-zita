@@ -39,7 +39,7 @@ body {
 	}
 }
 
-@media (min-width: $desktop-size) {
+@media (min-width: $small-desktop-size) {
 	.desktop {
 		display: none;
 	}
