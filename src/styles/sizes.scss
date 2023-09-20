@@ -1,10 +1,14 @@
-$desktop-size: 90rem;
+$ultra-wide-size: 150rem;
+$desktop-size: 120rem;
+$small-desktop-size: 90rem;
 $tablet-size: 60rem;
 $mobile-size: 30rem;
 
-$responsive-desktop: min(100% - 3rem, $desktop-size);
+$responsive-desktop: min(100% - 3rem, $small-desktop-size);
 
 $scroll-nav-image-width: 525px;
 $scroll-nav-image-height: 700px;
 $scroll-nav-actual-image-width: 346px;
 $scroll-nav-actual-image-height: 461px;
+$scroll-nav-active-image-width: 810px;
+$scroll-nav-active-image-height: 1080px;

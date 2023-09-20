@@ -7,3 +7,9 @@
 	transform: translate(-50%, -50%);
 	width: $responsive-desktop;
 }
+
+@media screen and (min-width: $ultra-wide-size) {
+	.scroll_nav {
+		margin-left: 10rem;
+	}
+}

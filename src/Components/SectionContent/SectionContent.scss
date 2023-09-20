@@ -1,15 +1,20 @@
 @import '../../styles/colors.scss';
 @import '../../styles/fonts.scss';
+@import '../../styles/sizes.scss';
 
 .section_content {
 	position: absolute;
 	top: 30%;
-	left: 50%;
-	width: 30%;
+	right: 10%;
+	left: calc($scroll-nav-active-image-width + 5rem);
 	height: 50%;
 	pointer-events: none;
+	display: flex;
+	justify-content: center;
 
 	.content {
+		width: min(100%, 50rem);
+
 		h3 {
 			font-size: $extra-large-text;
 			color: $dark-text;
