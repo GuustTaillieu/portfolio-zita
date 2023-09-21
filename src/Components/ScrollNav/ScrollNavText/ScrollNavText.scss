@@ -28,7 +28,7 @@
 			justify-content: flex-start;
 			align-items: center;
 			font-size: $extra-large-text;
-			transform: rotateX(calc(var(--i) * calc(360deg / 16)))
+			transform: rotateX(calc(var(--i) * calc(-360deg / 16)))
 				translateZ(270px);
 			backface-visibility: hidden;
 		}

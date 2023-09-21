@@ -1,55 +1,53 @@
-import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
-import useSection from '../../hooks/useSection';
-import './SectionContent.scss';
+import { useEffect, useMemo, useRef, useState } from 'react';
+import { ControlProps } from '../../Pages/Home/Home';
+import SCROLL_NAV_ITEMS from '../ScrollNav/scroll-nav-info';
+import Aboutme from '../../Sections/Aboutme/Aboutme';
+import Projects from '../../Sections/Projects/Projects';
+import Skills from '../../Sections/Skills/Skills';
+import Experience from '../../Sections/Experience/Experience';
 import anims from '../../animations';
+import './SectionContent.scss';
 
-const item = {
-	initial: { opacity: 0, y: 100 },
-	animate: { opacity: 1, y: 0 },
+export type ContentProps = {
+	showContent: boolean;
 };
 
-type Props = {
-	show: boolean;
-};
-
-const SectionContent = ({ show }: Props) => {
-	const { currentSectionTitle } = useSection();
-	const [showContent, setShowContent] = useState(show);
-	const [title, setTitle] = useState(currentSectionTitle);
+const SectionContent = ({ isDocked, scrollPosition }: ControlProps) => {
+	const [currentNavItem, setCurrentNavItem] = useState(SCROLL_NAV_ITEMS[0]);
+	const [showContent, setShowContent] = useState(true);
 
 	useEffect(() => {
-		if (!showContent) return;
 		setShowContent(false);
 		setTimeout(() => {
-			setTitle(currentSectionTitle);
+			const component = getComponent(scrollPosition);
+			setCurrentNavItem(component);
 			setShowContent(true);
-		}, 500);
-	}, [currentSectionTitle]);
-
-	useEffect(() => {
-		setShowContent(show);
-	}, [show]);
+		}, anims.sectionContentAnim.animate.transition.duration * 1000);
+	}, [scrollPosition]);
 
 	return (
 		<motion.div
 			className='section_content'
 			variants={anims.sectionContentAnim}
 			initial='initial'
-			animate={!show ? 'exit' : showContent ? 'animate' : 'initial'}
-			key='section_content'
-			style={{ pointerEvents: showContent ? 'all' : 'none' }}>
-			<motion.div className='content'>
-				<motion.h3 variants={item}>{title}</motion.h3>
-				<motion.p variants={item}>
-					Lorem ipsum dolor sit amet consectetur adipisicing elit.
-					Iusto consequuntur eveniet commodi laudantium, nam porro
-					voluptatem nemo cum fugiat. Sunt, ipsum! Provident voluptas
-					nesciunt, voluptatum nostrum illo sit consectetur aliquid.
-				</motion.p>
-			</motion.div>
+			animate={isDocked ? 'animate' : 'initial'}
+			transition={{
+				duration: anims.sectionContentAnim.animate.transition.duration,
+				ease: anims.sectionContentAnim.animate.transition.ease,
+			}}>
+			{currentNavItem.component({ showContent })}
 		</motion.div>
 	);
 };
+
+function getComponent(scrollPosition: number) {
+	const numItems = SCROLL_NAV_ITEMS.length;
+	const sectionIndex = ((scrollPosition % numItems) + numItems) % numItems;
+	const component = SCROLL_NAV_ITEMS.find(
+		(item) => item.scrollPosition === sectionIndex
+	)!;
+	return component;
+}
 
 export default SectionContent;
