@@ -33,7 +33,9 @@ const ScrollNavText = (props: Props) => {
 				className='scroll_nav_title_outer'
 				ref={galleryTitlesContainer}>
 				{[...Array(4)].map((_) =>
-					SCROLL_NAV_ITEMS.map((item) => (
+					SCROLL_NAV_ITEMS.sort(
+						(a, b) => a.scrollPosition - b.scrollPosition
+					).map((item) => (
 						<div
 							className='scroll_nav_title_in'
 							onClick={props.handleOnClick}

@@ -6,10 +6,12 @@
 	left: 50%;
 	transform: translate(-50%, -50%);
 	width: $responsive-desktop;
+	transition: margin-left 0.5s cubic-bezier(0.76, 0, 0.24, 1) 0.5s;
 }
 
 @media screen and (min-width: $ultra-wide-size) {
-	.scroll_nav {
+	.scroll_nav.docked {
 		margin-left: 10rem;
+		transition: margin-left 0.5s cubic-bezier(0.76, 0, 0.24, 1);
 	}
 }

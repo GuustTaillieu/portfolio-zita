@@ -44,7 +44,7 @@ const anims = {
 	sectionContentAnim: {
 		initial: {
 			opacity: 0,
-			y: 50,
+			x: -50,
 			transition: {
 				duration: 0.5,
 				delayChildren: 0.4,
@@ -54,7 +54,7 @@ const anims = {
 		},
 		animate: {
 			opacity: 1,
-			y: 0,
+			x: 0,
 			transition: {
 				duration: 0.5,
 				delay: 0.5,
@@ -63,6 +63,15 @@ const anims = {
 				ease: eases.easeInOutCubic,
 			},
 		},
+	},
+	sectionContentItemAnim: {
+		initial: { opacity: 0, y: 100 },
+		animate: { opacity: 1, y: 0 },
+	},
+	projectsOverlayAnim: {
+		initial: { scaleX: 0, originX: 1 },
+		animate: { scaleX: 1, originX: 0 },
+		exit: { scaleX: 0, originX: 1 },
 	},
 };
 

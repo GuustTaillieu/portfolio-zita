@@ -4,13 +4,16 @@ import './ScrollNav.scss';
 import ScrollNavText from './ScrollNavText/ScrollNavText';
 import ScrollNavImages from './ScrollNavImages/ScrollNavImages';
 import anims from '../../animations';
-import useSection from '../../hooks/useSection';
+import { ControlProps } from '../../Pages/Home/Home';
 
 export const ANIMATION_DURATION = 600;
-type Props = { isDocked: boolean; setIsDocked: (isDocked: boolean) => void };
 
-const ScrollNav = ({ isDocked, setIsDocked }: Props) => {
-	const { scrollPosition, setScrollPosition } = useSection();
+const ScrollNav = ({
+	isDocked,
+	setIsDocked,
+	scrollPosition,
+	setScrollPosition,
+}: Required<ControlProps>) => {
 	const [lastTime, setLastTime] = useState(0);
 
 	useEffect(() => {
@@ -36,7 +39,7 @@ const ScrollNav = ({ isDocked, setIsDocked }: Props) => {
 
 	return (
 		<motion.div
-			className='scroll_nav'
+			className={'scroll_nav' + (isDocked ? ' docked' : '')}
 			variants={anims.scrollNavSlideLeftAnim}
 			initial='initial'
 			animate={isDocked ? 'animate' : 'initial'}>

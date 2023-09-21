@@ -31,7 +31,9 @@ const ScrollNavImages = (props: Props) => {
 				className='scroll_nav_images_outer'
 				ref={galleryImagesContainer}>
 				{[...Array(4)].map((_) =>
-					SCROLL_NAV_ITEMS.map((item) => (
+					SCROLL_NAV_ITEMS.sort(
+						(a, b) => a.scrollPosition - b.scrollPosition
+					).map((item) => (
 						<div
 							onClick={props.handleOnClick}
 							className='scroll_nav_images_in'
