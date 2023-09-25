@@ -1,21 +1,19 @@
 import { motion } from 'framer-motion';
-import { useEffect, useMemo, useRef, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { ControlProps } from '../../Pages/Home/Home';
 import SCROLL_NAV_ITEMS from '../ScrollNav/scroll-nav-info';
-import Aboutme from '../../Sections/Aboutme/Aboutme';
-import Projects from '../../Sections/Projects/Projects';
-import Skills from '../../Sections/Skills/Skills';
-import Experience from '../../Sections/Experience/Experience';
 import anims from '../../animations';
 import './SectionContent.scss';
+import { useHomeState } from '../../hooks/useHomeState';
 
 export type ContentProps = {
 	showContent: boolean;
 };
 
-const SectionContent = ({ isDocked, scrollPosition }: ControlProps) => {
+const SectionContent = ({ scrollPosition }: ControlProps) => {
 	const [currentNavItem, setCurrentNavItem] = useState(SCROLL_NAV_ITEMS[0]);
 	const [showContent, setShowContent] = useState(true);
+	const { isDocked } = useHomeState();
 
 	useEffect(() => {
 		setShowContent(false);
@@ -36,7 +34,10 @@ const SectionContent = ({ isDocked, scrollPosition }: ControlProps) => {
 				duration: anims.sectionContentAnim.animate.transition.duration,
 				ease: anims.sectionContentAnim.animate.transition.ease,
 			}}>
-			{currentNavItem.component({ showContent })}
+			<currentNavItem.component
+				showContent={showContent}
+				key={currentNavItem.title}
+			/>
 		</motion.div>
 	);
 };

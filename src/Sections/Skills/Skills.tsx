@@ -5,14 +5,16 @@ import { ContentProps } from '../../Components/SectionContent/SectionContent';
 
 function Skills({ showContent }: ContentProps) {
 	return (
-		<motion.div
-			className='skills'
-			variants={anims.sectionContentAnim}
-			initial='initial'
-			animate={showContent ? 'animate' : 'initial'}
-			key='skills'>
-			<h2>Skills</h2>
-		</motion.div>
+		<div className='content'>
+			<motion.div
+				className='skills'
+				variants={anims.sectionContentAnim}
+				initial='initial'
+				animate={showContent ? 'animate' : 'initial'}
+				key='skills'>
+				<h3>Skills</h3>
+			</motion.div>
+		</div>
 	);
 }
 
