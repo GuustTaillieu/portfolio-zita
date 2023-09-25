@@ -5,16 +5,16 @@ import ScrollNavText from './ScrollNavText/ScrollNavText';
 import ScrollNavImages from './ScrollNavImages/ScrollNavImages';
 import anims from '../../animations';
 import { ControlProps } from '../../Pages/Home/Home';
+import { useHomeState } from '../../hooks/useHomeState';
 
-export const ANIMATION_DURATION = 600;
+export const ANIMATION_DURATION = 700;
 
 const ScrollNav = ({
-	isDocked,
-	setIsDocked,
 	scrollPosition,
 	setScrollPosition,
 }: Required<ControlProps>) => {
 	const [lastTime, setLastTime] = useState(0);
+	const { isDocked, setIsDocked } = useHomeState();
 
 	useEffect(() => {
 		window.addEventListener('wheel', scrollGallery);

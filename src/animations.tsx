@@ -63,6 +63,13 @@ const anims = {
 				ease: eases.easeInOutCubic,
 			},
 		},
+		projects: {
+			opacity: 0,
+			transition: {
+				duration: 0.5,
+				ease: eases.easeInOutCubic,
+			},
+		},
 	},
 	sectionContentItemAnim: {
 		initial: { opacity: 0, y: 100 },
@@ -72,6 +79,10 @@ const anims = {
 		initial: { scaleX: 0, originX: 1 },
 		animate: { scaleX: 1, originX: 0 },
 		exit: { scaleX: 0, originX: 1 },
+	},
+	closeBtnLineAnim: {
+		initial: { scaleX: 0, originX: 1 },
+		animate: { scaleX: 1, originX: 0 },
 	},
 };
 

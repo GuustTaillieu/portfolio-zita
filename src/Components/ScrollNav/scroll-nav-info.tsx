@@ -6,11 +6,12 @@ import Aboutme from '../../Sections/Aboutme/Aboutme';
 import Projects from '../../Sections/Projects/Projects';
 import Skills from '../../Sections/Skills/Skills';
 import Experience from '../../Sections/Experience/Experience';
+import { ContentProps } from '../SectionContent/SectionContent';
 
 export type ScrollNavItem = {
 	title: string;
 	image: string;
-	component: (props: { showContent: boolean }) => JSX.Element;
+	component: (props: ContentProps) => JSX.Element;
 	scrollPosition: number;
 };
 

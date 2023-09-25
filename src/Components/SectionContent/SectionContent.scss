@@ -4,16 +4,17 @@
 
 .section_content {
 	position: absolute;
-	top: 30%;
-	right: 10%;
-	left: calc($scroll-nav-active-image-width + 5rem);
-	height: 50%;
+	inset: 0;
 	pointer-events: none;
 	display: flex;
-	justify-content: center;
+	justify-content: flex-end;
+	align-items: center;
+	overflow: hidden;
 
 	.content {
-		width: min(100%, 50rem);
+		width: 45%;
+		margin-right: 2.5rem;
+		height: 50%;
 
 		h3 {
 			font-size: $extra-large-text;
