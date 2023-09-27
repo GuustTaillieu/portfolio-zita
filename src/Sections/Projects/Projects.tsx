@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { motion } from 'framer-motion';
 import anims from '../../animations';
 import './Projects.scss';
@@ -9,10 +9,12 @@ import {
 	handleMouseUp,
 } from './gallery-logic';
 import { useHomeState } from '../../hooks/useHomeState';
+import { PROJECTS } from './gallery-data';
 
 function Projects({ showContent }: ContentProps) {
 	const imageTrackRef = useRef<HTMLDivElement>(null);
-	const { setIsDocked } = useHomeState();
+	const { isDocked, setIsDocked } = useHomeState();
+	const { projectToShow, setProjectToShow } = useHomeState();
 
 	useEffect(() => {
 		clearAllDataAttributes(imageTrackRef.current!);
@@ -25,12 +27,16 @@ function Projects({ showContent }: ContentProps) {
 
 	return (
 		<motion.div
-			className='projects'
+			className={'projects' + (isDocked ? ' show' : '')}
 			variants={anims.sectionContentAnim}
 			initial='initial'
 			animate={showContent ? 'animate' : 'initial'}
-			key='projects'>
-			<div className='close-btn' onClick={() => setIsDocked(false)}>
+			key='projects'
+			layoutId='project_background'>
+			<motion.div
+				className='close-btn'
+				onClick={() => setIsDocked(false)}
+				layoutId='close-btn'>
 				<motion.div
 					className='close-btn__line'
 					variants={anims.closeBtnLineAnim}
@@ -39,66 +45,40 @@ function Projects({ showContent }: ContentProps) {
 					className='close-btn__line'
 					variants={anims.closeBtnLineAnim}
 				/>
-			</div>
+			</motion.div>
+
 			<div
 				className='image-track'
 				data-mouse-down-at='0'
 				data-prev-percentage='0'
 				ref={imageTrackRef}>
-				<img
-					src='https://unsplash.it/800/600'
-					alt='project'
-					className='project_img'
-					draggable={'false'}
-				/>
-				<img
-					src='https://unsplash.it/800/600'
-					alt='project'
-					className='project_img'
-					draggable={'false'}
-				/>
-				<img
-					src='https://unsplash.it/800/600'
-					alt='project'
-					className='project_img'
-					draggable={'false'}
-				/>
-				<img
-					src='https://unsplash.it/800/600'
-					alt='project'
-					className='project_img'
-					draggable={'false'}
-				/>
-				<img
-					src='https://unsplash.it/800/600'
-					alt='project'
-					className='project_img'
-					draggable={'false'}
-				/>
-				<img
-					src='https://unsplash.it/800/600'
-					alt='project'
-					className='project_img'
-					draggable={'false'}
-				/>
-				<img
-					src='https://unsplash.it/800/600'
-					alt='project'
-					className='project_img'
-					draggable={'false'}
-				/>
-				<img
-					src='https://unsplash.it/800/600'
-					alt='project'
-					className='project_img'
-					draggable={'false'}
-				/>
+				{PROJECTS.map((project, i) => (
+					<motion.div
+						style={{ backgroundImage: `url(${project.image})` }}
+						className='project_img'
+						draggable={'false'}
+						layoutId={`project-${project.id}`}
+						key={project.name}
+						onDoubleClick={() => setProjectToShow(project.id)}
+						variants={anims.projectImgAnim}
+						initial='initial'
+						animate={
+							projectToShow === null
+								? 'animate'
+								: projectToShow === project.id
+								? 'animate'
+								: 'initial'
+						}
+						transition={{ duration: 0.5 }}
+					/>
+				))}
 			</div>
 		</motion.div>
 	);
 }
 
 export default Projects;
+
 function addRemoveMouseListeners(
 	action: 'add' | 'remove',
 	imageTrack: HTMLDivElement

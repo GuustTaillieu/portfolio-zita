@@ -19,6 +19,7 @@ body:has(.projects) .scroll_nav {
 	background-color: $dark-background;
 	margin: 0;
 	overflow: hidden;
+	pointer-events: none;
 
 	.close-btn {
 		cursor: pointer;
@@ -56,8 +57,12 @@ body:has(.projects) .scroll_nav {
 		.project_img {
 			width: 40vmin;
 			height: 56vmin;
-			object-fit: cover;
-			object-position: center;
+			background-size: cover;
+			background-position: 100% 50%;
 		}
+	}
+
+	&.show .image-track .project_img {
+		pointer-events: all;
 	}
 }
