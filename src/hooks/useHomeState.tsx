@@ -7,17 +7,22 @@ type Props = {
 const HomeContext = createContext({
 	isDocked: false,
 	setIsDocked: (isDocked: boolean) => {},
+	projectToShow: null as number | null,
+	setProjectToShow: (projectToShow: number | null) => {},
 });
 
 const HomeState = ({ children }: Props) => {
 	const [isDocked, setIsDocked] = useState(false);
+	const [projectToShow, setProjectToShow] = useState<number | null>(null);
 
 	const contextProps = useMemo(() => {
 		return {
 			isDocked,
 			setIsDocked,
+			projectToShow,
+			setProjectToShow,
 		};
-	}, [isDocked, setIsDocked]);
+	}, [isDocked, setIsDocked, projectToShow, setProjectToShow]);
 
 	return (
 		<HomeContext.Provider value={contextProps}>

@@ -84,6 +84,10 @@ const anims = {
 		initial: { scaleX: 0, originX: 1 },
 		animate: { scaleX: 1, originX: 0 },
 	},
+	projectImgAnim: {
+		initial: { opacity: 0 },
+		animate: { opacity: 1 },
+	},
 };
 
 export default anims;

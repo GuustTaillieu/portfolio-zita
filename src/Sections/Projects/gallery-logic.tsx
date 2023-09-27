@@ -27,7 +27,7 @@ function handleMouseMove(e: MouseEvent, track: HTMLDivElement) {
 	images.forEach((img) => {
 		img.animate(
 			{
-				objectPosition: `${finalPercentage + 100}% 50%`,
+				backgroundPosition: `${finalPercentage + 100}% 50%`,
 			},
 			{ duration: 1200, fill: 'forwards', easing: 'ease-in-out' }
 		);

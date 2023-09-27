@@ -12,6 +12,7 @@ const Navigation = (props: Props) => {
 			initial='initial'
 			animate='animate'
 			exit='exit'
+			layoutId='navigation'
 			transition={{ duration: 1, ease: 'easeInOut', delay: 1 }}>
 			<Link to='/'>
 				<h1>Zita Worm</h1>
