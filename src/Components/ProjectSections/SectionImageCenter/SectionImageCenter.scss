@@ -1,0 +1,19 @@
+@import '../../../styles/colors.scss';
+@import '../../../styles/fonts.scss';
+
+.project_section[data-type='image_center'] {
+	padding: 10rem 0;
+	display: flex;
+	align-items: flex-start;
+	justify-content: center;
+	gap: 3rem;
+	margin: 0 auto;
+	max-width: 50%;
+
+	img {
+		width: 100%;
+		aspect-ratio: 4 / 3;
+		object-fit: cover;
+		margin-right: 2rem;
+	}
+}

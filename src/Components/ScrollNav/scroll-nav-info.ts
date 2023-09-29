@@ -3,10 +3,10 @@ import projects from '/images/projects.jpg';
 import skills from '/images/skills.jpg';
 import experience from '/images/experience.png';
 import Aboutme from '../../Sections/Aboutme/Aboutme';
-import Projects from '../../Sections/Projects/Projects';
 import Skills from '../../Sections/Skills/Skills';
 import Experience from '../../Sections/Experience/Experience';
 import { ContentProps } from '../SectionContent/SectionContent';
+import Projects from '../../Sections/Projects/Projects';
 
 export type ScrollNavItem = {
 	title: string;

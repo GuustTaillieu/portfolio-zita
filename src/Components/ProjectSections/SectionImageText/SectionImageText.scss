@@ -1,0 +1,47 @@
+@import '../../../styles/colors.scss';
+@import '../../../styles/fonts.scss';
+
+.project_section[data-type='image_text'] {
+	padding: 10rem 0;
+	display: flex;
+	align-items: flex-start;
+	justify-content: center;
+	gap: 3rem;
+	margin: 0 auto;
+	max-width: 80%;
+	color: $light-text;
+
+	img {
+		width: 60%;
+		max-height: 30rem;
+		object-fit: cover;
+		margin-right: 2rem;
+	}
+
+	.project_section_text {
+		flex: 1;
+		max-width: 30rem;
+
+		h3 {
+			font-size: $large-text;
+			margin-bottom: 1rem;
+		}
+
+		p {
+			font-size: $medium-text;
+			margin-bottom: 1rem;
+		}
+	}
+}
+
+@media (max-width: 768px) {
+	.project_section {
+		flex-direction: column;
+	}
+
+	.project_section img {
+		margin-right: 0;
+		margin-bottom: 1rem;
+		max-width: 100%;
+	}
+}
