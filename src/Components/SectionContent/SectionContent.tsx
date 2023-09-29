@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { useEffect, useState } from 'react';
-import { ControlProps } from '../../Pages/Home/Home';
+import { ControlProps } from '../../Pages/HomePage/HomePage';
 import SCROLL_NAV_ITEMS from '../ScrollNav/scroll-nav-info';
 import anims from '../../animations';
 import './SectionContent.scss';
@@ -26,7 +26,7 @@ const SectionContent = ({ scrollPosition }: ControlProps) => {
 
 	return (
 		<motion.div
-			className='section_content'
+			className={'section_content' + (isDocked ? ' docked' : '')}
 			variants={anims.sectionContentAnim}
 			initial='initial'
 			animate={isDocked ? 'animate' : 'initial'}
@@ -34,6 +34,7 @@ const SectionContent = ({ scrollPosition }: ControlProps) => {
 				duration: anims.sectionContentAnim.animate.transition.duration,
 				ease: anims.sectionContentAnim.animate.transition.ease,
 			}}>
+			<div className='filler'></div>
 			<currentNavItem.component
 				showContent={showContent}
 				key={currentNavItem.title}

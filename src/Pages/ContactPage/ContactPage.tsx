@@ -3,7 +3,7 @@ import { DefaultPageTransition } from '../../transitions';
 
 type Props = {};
 
-const Contact = (props: Props) => {
+const ContactPage = (props: Props) => {
 	return (
 		<DefaultPageTransition>
 			<div className='contact'>
@@ -13,4 +13,4 @@ const Contact = (props: Props) => {
 	);
 };
 
-export default Contact;
+export default (props: Props) => DefaultPageTransition(ContactPage);

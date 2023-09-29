@@ -7,14 +7,24 @@
 	inset: 0;
 	pointer-events: none;
 	display: flex;
-	justify-content: flex-end;
+	justify-content: flex-start;
 	align-items: center;
+	gap: 7rem;
 	overflow: hidden;
 
+	&.docked {
+		pointer-events: all;
+	}
+
+	.filler {
+		width: $scroll-nav-active-image-width;
+	}
+
 	.content {
-		width: 45%;
-		margin-right: 2.5rem;
+		max-width: 45rem;
 		height: 50%;
+		flex: 1 1 45rem;
+		padding-right: 2.5rem;
 
 		h3 {
 			font-size: $extra-large-text;

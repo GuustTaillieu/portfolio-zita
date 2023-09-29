@@ -4,10 +4,10 @@ import './ScrollNav.scss';
 import ScrollNavText from './ScrollNavText/ScrollNavText';
 import ScrollNavImages from './ScrollNavImages/ScrollNavImages';
 import anims from '../../animations';
-import { ControlProps } from '../../Pages/Home/Home';
+import { ControlProps } from '../../Pages/HomePage/HomePage';
 import { useHomeState } from '../../hooks/useHomeState';
 
-export const ANIMATION_DURATION = 700;
+export const ANIMATION_DURATION = 750;
 
 const ScrollNav = ({
 	scrollPosition,
