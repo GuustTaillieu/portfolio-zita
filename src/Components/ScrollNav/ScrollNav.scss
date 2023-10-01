@@ -15,3 +15,9 @@
 		transition: margin-left 0.5s cubic-bezier(0.76, 0, 0.24, 1);
 	}
 }
+
+@media screen and (width < $mobile-size) {
+	.scroll_nav {
+		left: 74% !important;
+	}
+}

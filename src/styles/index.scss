@@ -33,19 +33,19 @@ a {
 }
 
 /* ============================== MEDIA QUERIES ================================*/
-@media (min-width: $mobile-size) {
+@media (width > $mobile-size) {
 	.mobile {
 		display: none;
 	}
 }
 
-@media (max-width: $tablet-size) {
+@media (width < $tablet-size) {
 	.tablet {
 		display: none;
 	}
 }
 
-@media (min-width: $small-desktop-size) {
+@media (width < $small-desktop-size) {
 	.desktop {
 		display: none;
 	}

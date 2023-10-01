@@ -1,3 +1,5 @@
+$full-width: 100vw;
+
 $ultra-wide-size: 150rem;
 $desktop-size: 120rem;
 $small-desktop-size: 90rem;
@@ -12,3 +14,20 @@ $scroll-nav-actual-image-width: 346px;
 $scroll-nav-actual-image-height: 461px;
 $scroll-nav-active-image-width: 810px;
 $scroll-nav-active-image-height: 1080px;
+
+@media screen and (width > $desktop-size) {
+	$full-width: $desktop-size;
+}
+
+@media screen and (width > $small-desktop-size) {
+	$full-width: $small-desktop-size;
+}
+
+@media screen and (width > $tablet-size) {
+	$full-width: $tablet-size;
+}
+
+@media screen and (width > $mobile-size) {
+	$full-width: $mobile-size;
+	$scroll-nav-image-width: 300px;
+}

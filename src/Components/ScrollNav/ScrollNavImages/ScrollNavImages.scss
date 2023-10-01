@@ -6,6 +6,7 @@
 	top: 50%;
 	right: 7rem;
 	transform: translateY(-50%) scale(1.2);
+	transition: transform 0.5s cubic-bezier(0.76, 0, 0.24, 1);
 
 	.scroll_nav_images_outer {
 		width: $scroll-nav-image-width;
@@ -29,11 +30,39 @@
 				translateZ(2200px);
 			backface-visibility: hidden;
 
-			h2 {
+			.scroll_nav_images_text {
+				display: none;
 				font-size: 3rem;
 				text-align: center;
 				color: whitesmoke;
 				text-shadow: 0.25rem 0.25rem 0.125rem #0000008c;
+			}
+		}
+	}
+}
+
+@media screen and (orientation: portrait) {
+	.scroll_nav_images {
+		.scroll_nav_images_outer {
+			.scroll_nav_images_in {
+				.scroll_nav_images_text {
+					display: block;
+				}
+			}
+		}
+	}
+}
+
+@media screen and (width < $mobile-size) {
+	.scroll_nav_images {
+		right: 0;
+		transform: translateY(-50%) scale(0.7);
+
+		.scroll_nav_images_outer {
+			.scroll_nav_images_in {
+				.scroll_nav_images_text {
+					display: block;
+				}
 			}
 		}
 	}

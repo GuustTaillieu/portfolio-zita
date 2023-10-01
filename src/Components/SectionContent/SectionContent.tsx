@@ -5,6 +5,7 @@ import SCROLL_NAV_ITEMS from '../ScrollNav/scroll-nav-info';
 import anims from '../../animations';
 import './SectionContent.scss';
 import { useHomeState } from '../../hooks/useHomeState';
+import CloseButton from '../CloseButton/CloseButton';
 
 export type ContentProps = {
 	showContent: boolean;
@@ -13,7 +14,7 @@ export type ContentProps = {
 const SectionContent = ({ scrollPosition }: ControlProps) => {
 	const [currentNavItem, setCurrentNavItem] = useState(SCROLL_NAV_ITEMS[0]);
 	const [showContent, setShowContent] = useState(true);
-	const { isDocked } = useHomeState();
+	const { isDocked, setIsDocked } = useHomeState();
 
 	useEffect(() => {
 		setShowContent(false);
@@ -29,6 +30,7 @@ const SectionContent = ({ scrollPosition }: ControlProps) => {
 			className={'section_content' + (isDocked ? ' docked' : '')}
 			variants={anims.sectionContentAnim}
 			initial='initial'
+			onClick={() => setIsDocked(!isDocked)}
 			animate={isDocked ? 'animate' : 'initial'}
 			transition={{
 				duration: anims.sectionContentAnim.animate.transition.duration,

@@ -7,7 +7,7 @@ type Props = {
 	handleOnClick: (e: React.MouseEvent<HTMLDivElement>) => void;
 };
 
-const ScrollNavImages = (props: Props) => {
+const ScrollNavImages = ({ scrollPosition, handleOnClick }: Props) => {
 	const galleryImagesContainer = useRef<HTMLDivElement>(null);
 	const galleryImages = useRef<HTMLDivElement[]>([]);
 
@@ -21,9 +21,9 @@ const ScrollNavImages = (props: Props) => {
 	useEffect(() => {
 		galleryImagesContainer.current?.style.setProperty(
 			'--scroll',
-			props.scrollPosition.toString()
+			scrollPosition.toString()
 		);
-	}, [props.scrollPosition]);
+	}, [scrollPosition]);
 
 	return (
 		<div className='scroll_nav_images'>
@@ -35,14 +35,16 @@ const ScrollNavImages = (props: Props) => {
 						(a, b) => a.scrollPosition - b.scrollPosition
 					).map((item) => (
 						<div
-							onClick={props.handleOnClick}
+							onClick={handleOnClick}
 							className='scroll_nav_images_in'
 							ref={(el) => galleryImages.current.push(el!)}
 							key={item.title}
 							style={{
 								backgroundImage: `url(${item.image})`,
 							}}>
-							<h2 className='mobile'>{item.title}</h2>
+							<h2 className='scroll_nav_images_text'>
+								{item.title}
+							</h2>
 						</div>
 					))
 				)}

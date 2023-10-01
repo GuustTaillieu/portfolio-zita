@@ -5,11 +5,9 @@ type Props = {};
 
 const ContactPage = (props: Props) => {
 	return (
-		<DefaultPageTransition>
-			<div className='contact'>
-				<h2>Contact</h2>
-			</div>
-		</DefaultPageTransition>
+		<div className='contact'>
+			<h2>Contact</h2>
+		</div>
 	);
 };
 

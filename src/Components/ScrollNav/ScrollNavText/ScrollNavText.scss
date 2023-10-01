@@ -34,3 +34,9 @@
 		}
 	}
 }
+
+@media screen and (orientation: portrait) {
+	.scroll_nav_title {
+		display: none;
+	}
+}
