@@ -34,6 +34,7 @@ const ScrollNav = ({
 	const handleClick = (e: React.MouseEvent<HTMLDivElement>) => {
 		if (e.type === 'click') {
 			setIsDocked(!isDocked);
+			console.log('click');
 		}
 	};
 
@@ -42,6 +43,7 @@ const ScrollNav = ({
 			className={'scroll_nav' + (isDocked ? ' docked' : '')}
 			variants={anims.scrollNavSlideLeftAnim}
 			initial='initial'
+			onClick={handleClick}
 			animate={isDocked ? 'animate' : 'initial'}>
 			<ScrollNavText
 				scrollPosition={scrollPosition}

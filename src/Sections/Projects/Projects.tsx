@@ -18,21 +18,17 @@ function Projects({ showContent }: ContentProps) {
 				<h3>Projects</h3>
 				<p>
 					Lorem ipsum dolor sit amet consectetur adipisicing elit.
-					Quia commodi eius doloremque dolorum, perferendis quis.
-					Eaque obcaecati labore fugiat optio sunt ipsam accusantium
-					eos distinctio dolorum. Fuga magnam voluptas omnis
-					blanditiis sequi inventore ea est laboriosam natus, eos
-					facere! Ea quas perferendis voluptates quasi dolorem unde
-					culpa nihil, molestiae mollitia.
+					Obcaecati non alias magnam, tempora distinctio quos
+					excepturi, provident laudantium porro similique eius
+					blanditiis dolores nam. Possimus, accusamus adipisci? Quae,
+					hic. Dolores.
 				</p>
-				<Link to='/projects'>
-					<motion.button
-						whileHover={{ scale: 1.1 }}
-						whileTap={{ scale: 0.9 }}
-						className='button'>
-						See Projects
-					</motion.button>
-				</Link>
+				<motion.div
+					whileHover={{ scale: 1.1 }}
+					whileTap={{ scale: 0.9 }}
+					className='see-more_button'>
+					<Link to='/projects'>See Projects</Link>
+				</motion.div>
 			</motion.div>
 		</div>
 	);
