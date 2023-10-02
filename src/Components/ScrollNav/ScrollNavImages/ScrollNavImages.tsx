@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import './ScrollNavImages.scss';
 import SCROLL_NAV_ITEMS from '../scroll-nav-info';
-import { MobileOnlyView } from 'react-device-detect';
+import { MobileOnlyView, useDeviceSelectors } from 'react-device-detect';
 
 type Props = {
 	scrollPosition: number;
@@ -11,6 +11,7 @@ type Props = {
 const ScrollNavImages = ({ scrollPosition, handleOnClick }: Props) => {
 	const galleryImagesContainer = useRef<HTMLDivElement>(null);
 	const galleryImages = useRef<HTMLDivElement[]>([]);
+	const [{ isMobile }, data] = useDeviceSelectors(window.navigator.userAgent);
 
 	useEffect(() => {
 		galleryImages.current.forEach((item, index) => {
@@ -43,11 +44,11 @@ const ScrollNavImages = ({ scrollPosition, handleOnClick }: Props) => {
 							style={{
 								backgroundImage: `url(${item.image})`,
 							}}>
-							<MobileOnlyView>
+							{isMobile && (
 								<h2 className='scroll_nav_images_text'>
 									{item.title}
 								</h2>
-							</MobileOnlyView>
+							)}
 						</div>
 					))
 				)}

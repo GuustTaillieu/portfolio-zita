@@ -2,11 +2,14 @@ import './TopNav.scss';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import anims from '../../animations';
-import { isMobile, isTablet } from 'react-device-detect';
+import { useDeviceSelectors } from 'react-device-detect';
 
 type Props = {};
 
 const Navigation = (props: Props) => {
+	const [{ isMobile, isTablet }, data] = useDeviceSelectors(
+		window.navigator.userAgent
+	);
 	return (
 		<motion.nav
 			className={'navigation' + (isMobile && !isTablet ? ' mobile' : '')}
