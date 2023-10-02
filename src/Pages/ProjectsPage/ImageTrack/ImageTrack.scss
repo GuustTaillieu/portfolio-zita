@@ -22,5 +22,11 @@
 @media screen and (orientation: portrait) {
 	.image-track {
 		flex-direction: column;
+		width: 90%;
+
+		.project_img {
+			width: 100%;
+			aspect-ratio: 9/16;
+		}
 	}
 }

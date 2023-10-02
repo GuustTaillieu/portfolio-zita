@@ -35,7 +35,7 @@ const ImageTrack = (props: Props) => {
 			};
 		else
 			return {
-				top: -trackHeight + window.innerHeight / 2,
+				top: -trackHeight,
 				bottom: 0,
 			};
 	}, [isLandscape, trackWidth, trackHeight]);
