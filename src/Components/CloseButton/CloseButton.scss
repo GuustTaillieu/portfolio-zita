@@ -1,19 +1,19 @@
 @import '../../styles/colors.scss';
+@import '../../styles/fonts.scss';
 
 .close-btn {
 	cursor: pointer;
 	position: absolute;
-	top: 3.5rem;
-	right: 3.5rem;
+	top: 4rem;
+	right: 4rem;
 	z-index: 100;
 	pointer-events: all;
+	font-size: 2rem;
+	border-radius: 50%;
 
-	.close-btn__line {
-		width: 2.5rem;
-		height: 0.25rem;
-		background-color: $light-background;
-		box-shadow: 0 0 0.5rem $dark-background;
-		margin-bottom: 0.5rem;
-		transition: all 0.5s ease-in-out;
+	svg {
+		fill: antiquewhite;
+		background-color: black;
+		border-radius: 50%;
 	}
 }

@@ -27,13 +27,11 @@
 		padding-right: 2.5rem;
 
 		h3 {
-			font-size: $extra-large-text;
 			color: $dark-text;
 			margin-bottom: $large-text;
 		}
 
 		p {
-			font-size: $medium-text;
 			color: $dark-text;
 		}
 		.see-more_button {
@@ -45,11 +43,18 @@
 			letter-spacing: 0.1rem;
 			transition: all 0.25s ease-out;
 			cursor: pointer;
+			border-bottom: 0.125rem solid $dark-text;
+
+			span {
+				margin-left: 0.5rem;
+				vertical-align: bottom;
+				font-size: $small-text;
+			}
 		}
 	}
 }
 
-@media screen and (width < $mobile-size) {
+@media screen and (width < $tablet-size) {
 	#root:has(.section_content.docked) .scroll_nav_images {
 		transform: translateX(-100%);
 		transition: transform 0.5s cubic-bezier(0.76, 0, 0.24, 1);
@@ -61,10 +66,18 @@
 		}
 		.content {
 			padding-right: 0;
-			margin-top: -2rem;
-			max-width: $responsive-desktop;
 			margin: 0 auto;
+			margin-top: -4rem;
+			max-width: 80%;
 			text-align: center;
+		}
+	}
+}
+
+@media screen and (width < $mobile-size) {
+	.section_content {
+		.content {
+			max-width: $responsive-desktop;
 		}
 	}
 }

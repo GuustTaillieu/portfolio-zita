@@ -1,5 +1,6 @@
 @import '../../../styles/colors.scss';
 @import '../../../styles/fonts.scss';
+@import '../../../styles/sizes.scss';
 
 .project_section[data-type='next_project'] {
 	padding-top: 10rem;
@@ -12,7 +13,7 @@
 	overflow-y: hidden;
 	color: $light-text;
 
-	h3 {
+	h2 {
 		margin-bottom: -2.5rem;
 		z-index: 1;
 	}
@@ -22,5 +23,18 @@
 		height: 30rem;
 		z-index: 0;
 		object-fit: cover;
+	}
+}
+
+@media (width < $mobile-size) {
+	.project_section[data-type='next_project'] {
+		max-width: 100%;
+		padding-top: 3rem;
+		height: 10rem;
+
+		h2 {
+			font-size: $mobile-large-text;
+			margin-bottom: -1.3rem;
+		}
 	}
 }

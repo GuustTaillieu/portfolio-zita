@@ -1,12 +1,9 @@
 @import '../../styles/colors.scss';
 @import '../../styles/fonts.scss';
 
-::-webkit-scrollbar {
-	display: none;
-}
-
 .project {
 	background-color: $dark-background;
+	overflow: auto;
 
 	.project_img {
 		width: 100vw;
@@ -16,7 +13,6 @@
 	}
 
 	.project_title {
-		font-size: $extra-large-text;
 		text-align: center;
 		color: $light-text;
 		text-transform: uppercase;

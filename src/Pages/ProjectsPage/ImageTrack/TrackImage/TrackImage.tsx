@@ -1,6 +1,6 @@
 import React from 'react';
 import { MotionValue, motion } from 'framer-motion';
-import { ProjectType } from '../../gallery-data';
+import { ProjectType } from '../../projects-data';
 import { useNavigate } from 'react-router';
 
 type Props = {

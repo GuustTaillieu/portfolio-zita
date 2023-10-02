@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import anims from '../../animations';
 import { ContentProps } from '../../Components/SectionContent/SectionContent';
 import { Link } from 'react-router-dom';
+import { FaAngleRight } from 'react-icons/fa';
 
 type Props = {};
 
@@ -24,10 +25,15 @@ function Projects({ showContent }: ContentProps) {
 					hic. Dolores.
 				</p>
 				<motion.div
-					whileHover={{ scale: 1.1 }}
-					whileTap={{ scale: 0.9 }}
+					whileHover={{ x: 5 }}
+					whileTap={{ x: 5, scale: 0.9 }}
 					className='see-more_button'>
-					<Link to='/projects'>See Projects</Link>
+					<Link to='/projects'>
+						See Projects
+						<span>
+							<FaAngleRight />
+						</span>
+					</Link>
 				</motion.div>
 			</motion.div>
 		</div>

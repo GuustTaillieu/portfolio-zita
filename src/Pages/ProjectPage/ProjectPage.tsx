@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import { motion, useMotionValue, useScroll, useTransform } from 'framer-motion';
 import './ProjectPage.scss';
 import { useNavigate, useParams } from 'react-router';
-import { PROJECTS } from '../ProjectsPage/gallery-data';
+import { PROJECTS } from '../ProjectsPage/projects-data';
 import SectionFullWidthImage from '../../Components/ProjectSections/SectionFullWidthImage/SectionFullWidthImage';
 import SectionImageText from '../../Components/ProjectSections/SectionImageText/SectionImageText';
 import { DefaultPageTransition } from '../../transitions';
@@ -10,6 +10,7 @@ import SectionImageCenter from '../../Components/ProjectSections/SectionImageCen
 import SectionImageRow from '../../Components/ProjectSections/SectionImageRow/SectionImageRow';
 import SectionNextProject from '../../Components/ProjectSections/SectionNextProject/SectionNextProject';
 import { Link } from 'react-router-dom';
+import SectionTextImage from '../../Components/ProjectSections/SectionTextImage/SectionTextImage';
 
 type Props = {};
 
@@ -37,7 +38,7 @@ const ProjectPage = () => {
 			</Link>
 			<motion.h2
 				className='project_title'
-				initial={{ opacity: 0, y: 40 }}
+				initial={{ opacity: 0, y: 60 }}
 				whileInView={{ opacity: 1, y: 0 }}
 				viewport={{ once: true, amount: 'all' }}
 				transition={{ duration: 0.5, ease: 'easeInOut' }}>
@@ -53,6 +54,12 @@ const ProjectPage = () => {
 			<SectionImageRow
 				key={project.id}
 				images={Array(3).fill(project.image)}
+			/>
+			<SectionTextImage
+				key={project.id}
+				image={project.image}
+				text={project.description}
+				title={project.name}
 			/>
 			<SectionNextProject
 				key={project.id}

@@ -1,5 +1,6 @@
 @import '../../../styles/colors.scss';
 @import '../../../styles/fonts.scss';
+@import '../../../styles/sizes.scss';
 
 .project_section[data-type='image_center'] {
 	padding: 10rem 0;
@@ -15,5 +16,18 @@
 		aspect-ratio: 4 / 3;
 		object-fit: cover;
 		margin-right: 2rem;
+	}
+}
+
+@media screen and (width < $tablet-size) {
+	.project_section[data-type='image_center'] {
+		max-width: 100%;
+		padding-top: 3rem;
+		padding-bottom: 3rem;
+
+		img {
+			margin-right: 0;
+			margin-bottom: 2rem;
+		}
 	}
 }

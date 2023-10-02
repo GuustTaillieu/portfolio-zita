@@ -27,16 +27,14 @@
 			display: flex;
 			justify-content: flex-start;
 			align-items: center;
-			font-size: $extra-large-text;
 			transform: rotateX(calc(var(--i) * calc(-360deg / 16)))
 				translateZ(270px);
 			backface-visibility: hidden;
-		}
-	}
-}
+			font-size: $extra-large-text;
 
-@media screen and (orientation: portrait) {
-	.scroll_nav_title {
-		display: none;
+			h2 {
+				font-size: revert;
+			}
+		}
 	}
 }
