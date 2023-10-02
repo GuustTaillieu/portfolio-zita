@@ -6,6 +6,7 @@ import anims from '../../animations';
 import './SectionContent.scss';
 import { useHomeState } from '../../hooks/useHomeState';
 import CloseButton from '../CloseButton/CloseButton';
+import { isMobile } from 'react-device-detect';
 
 export type ContentProps = {
 	showContent: boolean;
@@ -41,6 +42,9 @@ const SectionContent = ({ scrollPosition }: ControlProps) => {
 				showContent={showContent}
 				key={currentNavItem.title}
 			/>
+			{isMobile && (
+				<CloseButton callback={() => setIsDocked(!isDocked)} />
+			)}
 		</motion.div>
 	);
 };

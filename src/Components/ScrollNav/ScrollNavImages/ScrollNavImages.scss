@@ -7,6 +7,7 @@
 	right: 7rem;
 	transform: translateY(-50%) scale(1.2);
 	transition: transform 0.5s cubic-bezier(0.76, 0, 0.24, 1);
+	transition-delay: 0.5s;
 
 	.scroll_nav_images_outer {
 		width: $scroll-nav-image-width;
@@ -57,12 +58,14 @@
 	.scroll_nav_images {
 		right: 0;
 		transform: translateY(-50%) scale(0.7);
+	}
+}
 
-		.scroll_nav_images_outer {
-			.scroll_nav_images_in {
-				.scroll_nav_images_text {
-					display: block;
-				}
+body:has(.mobile) .scroll_nav_images {
+	.scroll_nav_images_outer {
+		.scroll_nav_images_in {
+			.scroll_nav_images_text {
+				display: block;
 			}
 		}
 	}

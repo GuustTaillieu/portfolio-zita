@@ -1,7 +1,7 @@
 import { useEffect, useState, useMemo, useRef } from 'react';
 import { motion, useMotionValue, useTransform } from 'framer-motion';
 import TrackImage from './TrackImage/TrackImage';
-import { PROJECTS } from '../gallery-data';
+import { PROJECTS } from '../projects-data';
 import './ImageTrack.scss';
 
 type Props = {};

@@ -1,3 +1,5 @@
+@import './sizes.scss';
+
 @font-face {
 	font-family: 'Antonia';
 	src: url('../fonts/Antonia-Light.ttf') format('truetype'),
@@ -19,7 +21,17 @@
 $default-font: 'Antonia', serif;
 $secondary-font: 'Clarika', sans-serif;
 
-$small-text: 1.2rem;
-$medium-text: 1.6rem;
-$large-text: 3rem;
 $extra-large-text: 4rem;
+$large-text: 3rem;
+$medium-text: 1.6rem;
+$small-text: 1.4rem;
+
+$tablet-extra-large-text: 3.5rem;
+$tablet-large-text: 3rem;
+$tablet-medium-text: 1.5rem;
+$tablet-small-text: 1.1rem;
+
+$mobile-extra-large-text: 2.5rem;
+$mobile-large-text: 2rem;
+$mobile-medium-text: 1.3rem;
+$mobile-small-text: 1rem;

@@ -14,6 +14,10 @@ img {
 	display: block;
 }
 
+::-webkit-scrollbar {
+	display: none;
+}
+
 /* ============================== DEFAULT ================================*/
 #root {
 	background-color: $light-background;
@@ -32,6 +36,22 @@ a {
 	color: inherit;
 }
 
+h2 {
+	font-size: $extra-large-text;
+}
+
+h3 {
+	font-size: $large-text;
+}
+
+h4 {
+	font-size: $medium-text;
+}
+
+p {
+	font-size: $small-text;
+}
+
 /* ============================== MEDIA QUERIES ================================*/
 @media (width > $mobile-size) {
 	.mobile {
@@ -39,9 +59,43 @@ a {
 	}
 }
 
+@media screen and (width < $mobile-size) {
+	h2 {
+		font-size: $mobile-extra-large-text;
+	}
+
+	h3 {
+		font-size: $mobile-large-text;
+	}
+
+	h4 {
+		font-size: $mobile-medium-text;
+	}
+
+	p {
+		font-size: $mobile-small-text;
+	}
+}
+
 @media (width < $tablet-size) {
 	.tablet {
 		display: none;
+	}
+
+	h2 {
+		font-size: $tablet-extra-large-text;
+	}
+
+	h3 {
+		font-size: $tablet-large-text;
+	}
+
+	h4 {
+		font-size: $tablet-medium-text;
+	}
+
+	p {
+		font-size: $tablet-small-text;
 	}
 }
 

@@ -1,6 +1,6 @@
 import React, { useMemo } from 'react';
 import { motion } from 'framer-motion';
-import './SectionImageText.scss';
+import './SectionTextImage.scss';
 import { isMobile } from 'react-device-detect';
 
 type Props = {
@@ -10,7 +10,7 @@ type Props = {
 	textFirst?: boolean;
 };
 
-const SectionImageText = ({ title, image, text, textFirst }: Props) => {
+const SectionTextImage = ({ title, image, text, textFirst }: Props) => {
 	const flexDir = useMemo(() => {
 		if (isMobile) {
 			return 'column';
@@ -22,7 +22,7 @@ const SectionImageText = ({ title, image, text, textFirst }: Props) => {
 	return (
 		<motion.div
 			className='project_section'
-			data-type='image_text'
+			data-type='text_image'
 			style={{ flexDirection: flexDir }}
 			transition={{
 				duration: 0.5,
@@ -50,4 +50,4 @@ const SectionImageText = ({ title, image, text, textFirst }: Props) => {
 	);
 };
 
-export default SectionImageText;
+export default SectionTextImage;

@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import './ScrollNavImages.scss';
 import SCROLL_NAV_ITEMS from '../scroll-nav-info';
+import { MobileOnlyView } from 'react-device-detect';
 
 type Props = {
 	scrollPosition: number;
@@ -42,9 +43,11 @@ const ScrollNavImages = ({ scrollPosition, handleOnClick }: Props) => {
 							style={{
 								backgroundImage: `url(${item.image})`,
 							}}>
-							<h2 className='scroll_nav_images_text'>
-								{item.title}
-							</h2>
+							<MobileOnlyView>
+								<h2 className='scroll_nav_images_text'>
+									{item.title}
+								</h2>
+							</MobileOnlyView>
 						</div>
 					))
 				)}

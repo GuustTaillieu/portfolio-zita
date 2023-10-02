@@ -1,7 +1,7 @@
 import { useMemo } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import './SectionNextProject.scss';
-import { PROJECTS } from '../../../Pages/ProjectsPage/gallery-data';
+import { PROJECTS } from '../../../Pages/ProjectsPage/projects-data';
 import { Link } from 'react-router-dom';
 
 type Props = {
@@ -19,14 +19,14 @@ const SectionNextProject = ({ currentProjectId }: Props) => {
 	return (
 		<Link to={`/projects/${nextProject.id}`}>
 			<motion.div className='project_section' data-type='next_project'>
-				<motion.h3
+				<motion.h2
 					className='project_title'
 					initial={{ opacity: 0, y: 40 }}
 					whileInView={{ opacity: 1, y: 0 }}
 					viewport={{ once: true, amount: 'all' }}
 					transition={{ duration: 0.5, ease: 'easeInOut' }}>
 					Next Project
-				</motion.h3>
+				</motion.h2>
 				<motion.img
 					src={nextProject.image}
 					alt={'next project'}

@@ -2,7 +2,7 @@
 @import '../../../styles/fonts.scss';
 @import '../../../styles/sizes.scss';
 
-.project_section[data-type='image_text'] {
+.project_section[data-type='text_image'] {
 	padding: 10rem 0;
 	display: flex;
 	align-items: flex-start;
@@ -13,7 +13,7 @@
 	color: $light-text;
 
 	img {
-		width: 60%;
+		width: 40%;
 		max-height: 30rem;
 		object-fit: cover;
 		margin-right: 2rem;
@@ -21,7 +21,8 @@
 
 	.project_section_text {
 		flex: 1;
-		max-width: 30rem;
+		max-width: 50rem;
+		height: 30rem;
 
 		h3 {
 			margin-bottom: 1rem;
@@ -29,12 +30,17 @@
 
 		p {
 			margin-bottom: 1rem;
+			column-count: 2;
+			column-gap: 2.5rem;
+			overflow-x: hidden;
+			column-rule: 1px solid $light-text;
+			width: 100%;
 		}
 	}
 }
 
 @media (width < $tablet-size) {
-	.project_section[data-type='image_text'] {
+	.project_section[data-type='text_image'] {
 		max-width: 90%;
 		padding-top: 3rem;
 		padding-bottom: 3rem;
@@ -56,6 +62,7 @@
 
 			p {
 				text-align: center;
+				column-count: 1;
 			}
 		}
 	}
