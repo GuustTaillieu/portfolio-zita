@@ -3,10 +3,10 @@ import { motion, useScroll, useTransform } from 'framer-motion';
 import './SectionImageCenter.scss';
 
 type Props = {
-	image: string;
+	imageSet: string[];
 };
 
-const SectionImageCenter = ({ image }: Props) => {
+const SectionImageCenter = ({ imageSet }: Props) => {
 	const ref = React.useRef<HTMLDivElement>(null);
 	const { scrollYProgress } = useScroll({
 		target: ref,
@@ -29,7 +29,9 @@ const SectionImageCenter = ({ image }: Props) => {
 			}}>
 			<motion.img
 				data-cursor='-exclusion'
-				src={image}
+				loading='lazy'
+				src={imageSet[0]}
+				srcSet={`${imageSet[0]} 1x, ${imageSet[1]} 2x`}
 				alt={'project image'}
 				style={{ opacity }}
 				viewport={{ once: true, amount: 1 }}

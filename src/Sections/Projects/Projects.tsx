@@ -2,8 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import anims from '../../animations';
 import { ContentProps } from '../../Components/SectionContent/SectionContent';
-import { Link } from 'react-router-dom';
-import { FaAngleRight } from 'react-icons/fa';
+import SeeMoreButton from '../../Components/SeeMoreButton/SeeMoreButton';
 
 type Props = {};
 
@@ -24,18 +23,7 @@ function Projects({ showContent }: ContentProps) {
 					blanditiis dolores nam. Possimus, accusamus adipisci? Quae,
 					hic. Dolores.
 				</p>
-				<motion.div
-					whileHover={{ x: 5 }}
-					whileTap={{ x: 5, scale: 0.9 }}
-					className='see-more_button'
-					data-cursor='-pointer'>
-					<Link to='/projects'>
-						See Projects
-						<span>
-							<FaAngleRight />
-						</span>
-					</Link>
-				</motion.div>
+				<SeeMoreButton to='/projects' />
 			</motion.div>
 		</div>
 	);

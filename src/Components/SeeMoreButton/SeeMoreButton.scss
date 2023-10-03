@@ -1,0 +1,22 @@
+@import '../../styles/colors.scss';
+@import '../../styles/fonts.scss';
+@import '../../styles/sizes.scss';
+
+.see-more_button {
+	display: inline-block;
+	margin-top: $large-text;
+	color: $dark-text;
+	font-size: $small-text;
+	font-weight: 700;
+	letter-spacing: 0.1rem;
+	transition: all 0.25s ease-out;
+	cursor: pointer;
+	border-bottom: 0.125rem solid $dark-text;
+	text-transform: uppercase;
+
+	span {
+		margin-left: 0.5rem;
+		vertical-align: center;
+		font-size: 1rem;
+	}
+}

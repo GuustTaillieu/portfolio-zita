@@ -34,23 +34,6 @@
 		p {
 			color: $dark-text;
 		}
-		.see-more_button {
-			display: inline-block;
-			margin-top: $large-text;
-			color: $dark-text;
-			font-size: $medium-text;
-			font-weight: 700;
-			letter-spacing: 0.1rem;
-			transition: all 0.25s ease-out;
-			cursor: pointer;
-			border-bottom: 0.125rem solid $dark-text;
-
-			span {
-				margin-left: 0.5rem;
-				vertical-align: bottom;
-				font-size: $small-text;
-			}
-		}
 	}
 }
 

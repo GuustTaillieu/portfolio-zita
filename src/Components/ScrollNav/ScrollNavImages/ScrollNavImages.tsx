@@ -40,9 +40,8 @@ const ScrollNavImages = ({ scrollPosition, handleOnClick }: Props) => {
 							ref={(el) => galleryImages.current.push(el!)}
 							key={item.title}
 							style={{
-								backgroundImage: `url(${item.image})`,
+								backgroundImage: `image-set(url(${item.imageSet[0]}), url(${item.imageSet[1]}) 2x)`,
 							}}
-							data-cursor-sticky
 							data-cursor-text='Click or Scroll'>
 							{isMobile && (
 								<h2 className='scroll_nav_images_text'>

@@ -5,12 +5,12 @@ import { useDeviceSelectors } from 'react-device-detect';
 
 type Props = {
 	title?: string;
-	image: string;
+	imageSet: string[];
 	text: string;
 	textFirst?: boolean;
 };
 
-const SectionTextImage = ({ title, image, text, textFirst }: Props) => {
+const SectionTextImage = ({ title, imageSet, text, textFirst }: Props) => {
 	const [{ isMobile }, data] = useDeviceSelectors(window.navigator.userAgent);
 	const flexDir = useMemo(() => {
 		if (isMobile) {
@@ -33,7 +33,9 @@ const SectionTextImage = ({ title, image, text, textFirst }: Props) => {
 			}}>
 			<motion.img
 				data-cursor='-exclusion'
-				src={image}
+				loading='lazy'
+				src={imageSet[0]}
+				srcSet={`${imageSet[0]} 1x, ${imageSet[1]} 2x`}
 				alt={title ?? 'project image'}
 				initial={{ opacity: 0, y: 40 }}
 				whileInView={{ opacity: 1, y: 0 }}

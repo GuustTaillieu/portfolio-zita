@@ -10,7 +10,7 @@ import Projects from '../../Sections/Projects/Projects';
 
 export type ScrollNavItem = {
 	title: string;
-	image: string;
+	imageSet: string[];
 	component: (props: ContentProps) => JSX.Element;
 	scrollPosition: number;
 };
@@ -18,25 +18,25 @@ export type ScrollNavItem = {
 const SCROLL_NAV_ITEMS: ScrollNavItem[] = [
 	{
 		title: 'About me',
-		image: about_me,
+		imageSet: [about_me, about_me],
 		component: Aboutme,
 		scrollPosition: 0,
 	},
 	{
 		title: 'Projects',
-		image: projects,
+		imageSet: [projects, projects],
 		component: Projects,
 		scrollPosition: 1,
 	},
 	{
 		title: 'Skills',
-		image: skills,
+		imageSet: [skills, skills],
 		component: Skills,
 		scrollPosition: 2,
 	},
 	{
 		title: 'Experience',
-		image: experience,
+		imageSet: [experience, experience],
 		component: Experience,
 		scrollPosition: 3,
 	},

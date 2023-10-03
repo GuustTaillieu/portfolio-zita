@@ -1,8 +1,8 @@
 import { useMemo } from 'react';
-import { motion, useScroll, useTransform } from 'framer-motion';
+import { motion } from 'framer-motion';
 import './SectionNextProject.scss';
 import { PROJECTS } from '../../../Pages/ProjectsPage/projects-data';
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 type Props = {
 	currentProjectId: number;
@@ -34,7 +34,9 @@ const SectionNextProject = ({ currentProjectId }: Props) => {
 			</motion.h2>
 			<motion.img
 				data-cursor='-exclusion'
-				src={nextProject.image}
+				loading='lazy'
+				src={nextProject.imageSet[0]}
+				srcSet={`${nextProject.imageSet[0]} 1x, ${nextProject.imageSet[1]} 2x`}
 				alt={'next project'}
 				initial={{ opacity: 0, y: 40 }}
 				whileInView={{ opacity: 1, y: 0 }}

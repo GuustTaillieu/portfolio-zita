@@ -7,9 +7,9 @@ MouseFollower.registerGSAP(gsap);
 const cursor = new MouseFollower({
 	speed: 1,
 	stateDetection: {
-		'-pointer': 'a,button',
+		'-pointer': 'button',
 		'-hidden': 'input',
-		'-inverse': 'h3,h4,h5,h6,p,.see-more_button,.project,.project_section',
+		'-inverse': 'h3,h4,h5,h6,p,.project,.project_section',
 		'-exclusion': '.see-more_button',
 	},
 });

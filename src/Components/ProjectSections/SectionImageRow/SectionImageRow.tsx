@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 import './SectionImageRow.scss';
 
 type Props = {
-	images: string[];
+	images: string[][];
 };
 
 const SectionImageRow = ({ images }: Props) => {
@@ -11,7 +11,7 @@ const SectionImageRow = ({ images }: Props) => {
 			{images.map((image, index) => (
 				<motion.div
 					className='image_row_image'
-					key={image + index}
+					key={image[0] + index}
 					initial={{ opacity: 0 }}
 					whileInView={{ opacity: 1 }}
 					viewport={{ once: true, amount: 0.2 }}
@@ -21,7 +21,9 @@ const SectionImageRow = ({ images }: Props) => {
 						delay: index / 10 + 0.5,
 					}}
 					style={{
-						backgroundImage: `url(${image})`,
+						backgroundImage: `image-set(
+							url(${image[0]}) 1x,
+							url(${image[1]}) 2x`,
 					}}
 					data-cursor='-exclusion'
 				/>
