@@ -2,6 +2,9 @@ import React from 'react';
 import { MotionValue, motion } from 'framer-motion';
 import { ProjectType } from '../../projects-data';
 import { useNavigate } from 'react-router';
+import { useDeviceSelectors } from 'react-device-detect';
+import { FaArrowRight } from 'react-icons/fa';
+import './TrackImage.scss';
 
 type Props = {
 	project: ProjectType;
@@ -9,6 +12,7 @@ type Props = {
 };
 
 function TrackImage({ project, backgroundPositionX }: Props) {
+	const [{ isMobile }, data] = useDeviceSelectors(window.navigator.userAgent);
 	const navigate = useNavigate();
 	const [clicking, setClicking] = React.useState(false);
 
@@ -32,8 +36,21 @@ function TrackImage({ project, backgroundPositionX }: Props) {
 			onMouseDown={() => setClicking(true)}
 			onMouseMove={() => setClicking(false)}
 			onMouseUp={() => clicking && navigate(`/projects/${project.id}`)}
-			data-cursor-text='Click or Drag'
-		/>
+			data-cursor-text='Click or Drag'>
+			{isMobile && (
+				<motion.div
+					className='project_img_overlay'
+					initial={{ opacity: 0 }}
+					animate={{ opacity: 1 }}
+					exit={{ opacity: 0 }}
+					transition={{
+						duration: 0.5,
+						ease: 'easeInOut',
+					}}>
+					<FaArrowRight />
+				</motion.div>
+			)}
+		</motion.div>
 	);
 }
 

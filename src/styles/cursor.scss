@@ -180,3 +180,9 @@ $mf-color-text: #fff !default;
 		}
 	}
 }
+
+body:has(.mobile) {
+	.mf-cursor {
+		display: none !important;
+	}
+}

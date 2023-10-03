@@ -38,7 +38,7 @@ const SectionNextProject = ({ currentProjectId }: Props) => {
 				alt={'next project'}
 				initial={{ opacity: 0, y: 40 }}
 				whileInView={{ opacity: 1, y: 0 }}
-				viewport={{ once: true, amount: 0.5 }}
+				viewport={{ once: true, amount: 0.1 }}
 			/>
 		</motion.div>
 	);

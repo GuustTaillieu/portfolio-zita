@@ -1,0 +1,22 @@
+@import '../../../../styles/colors.scss';
+
+.project_img {
+	position: relative;
+	width: 40vmin;
+	height: 56vmin;
+	background-size: cover;
+	background-position: 100% 50%;
+	transition: all 0.5s ease-in-out;
+	background-color: darkcyan;
+
+	.project_img_overlay {
+		position: absolute;
+		inset: 0;
+		background-color: rgba(0, 0, 0, 0.5);
+		z-index: 100;
+		display: grid;
+		place-items: center;
+		color: $light-text;
+		font-size: 2rem;
+	}
+}

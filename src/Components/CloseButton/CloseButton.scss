@@ -1,5 +1,6 @@
 @import '../../styles/colors.scss';
 @import '../../styles/fonts.scss';
+@import '../../styles/sizes.scss';
 
 .close-btn {
 	position: absolute;
@@ -12,5 +13,25 @@
 
 	&.inverted {
 		color: $light-text;
+	}
+}
+
+@media screen and (width < $tablet-size) {
+	.close-btn {
+		position: fixed;
+		top: unset;
+		bottom: 1.5rem;
+		left: 1.5rem;
+		padding: 0.5rem;
+		background-color: $dark-background;
+		color: $light-text;
+		border-radius: 50%;
+		height: 3rem;
+		width: 3rem;
+
+		&.inverted {
+			background-color: $light-background;
+			color: $dark-text;
+		}
 	}
 }
