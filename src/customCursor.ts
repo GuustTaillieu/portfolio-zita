@@ -1,5 +1,6 @@
 import MouseFollower from 'mouse-follower';
 import gsap from 'gsap';
+import { isMobile } from 'react-device-detect';
 
 MouseFollower.registerGSAP(gsap);
 

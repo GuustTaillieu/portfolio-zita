@@ -29,8 +29,14 @@ const DefaultPageTransition = (
 	);
 };
 
-const invertedPages = ['/projects', '/projects/1'];
-const isInverted = (locationPath: string) =>
-	invertedPages.includes(locationPath) ? ' inverted' : '';
+const invertedPages: (string | RegExp)[] = ['/projects', /\/projects\/\d/i];
+const isInverted = (locationPath: string) => {
+	return invertedPages.some((page) => {
+		if (typeof page === 'string') return locationPath === page;
+		else return page.test(locationPath);
+	})
+		? ' inverted'
+		: '';
+};
 
 export { DefaultPageTransition, isInverted };

@@ -3,15 +3,6 @@
 	top: 25vh;
 	display: flex;
 	gap: 4vmin;
-
-	.project_img {
-		width: 40vmin;
-		height: 56vmin;
-		background-size: cover;
-		background-position: 100% 50%;
-		transition: all 0.5s ease-in-out;
-		background-color: darkcyan;
-	}
 }
 
 .height-filler {
