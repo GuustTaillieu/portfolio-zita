@@ -1,4 +1,4 @@
-import React from 'react';
+import {} from 'react';
 import { motion } from 'framer-motion';
 import './CloseButton.scss';
 import { FaArrowLeft } from 'react-icons/fa';

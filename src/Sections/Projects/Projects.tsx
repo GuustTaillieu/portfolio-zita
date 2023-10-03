@@ -1,10 +1,8 @@
-import React from 'react';
+import {} from 'react';
 import { motion } from 'framer-motion';
 import anims from '../../animations';
 import { ContentProps } from '../../Components/SectionContent/SectionContent';
 import SeeMoreButton from '../../Components/SeeMoreButton/SeeMoreButton';
-
-type Props = {};
 
 function Projects({ showContent }: ContentProps) {
 	return (

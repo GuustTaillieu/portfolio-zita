@@ -1,4 +1,3 @@
-import { motion } from 'framer-motion';
 import { useState } from 'react';
 import { DefaultPageTransition } from '../../transitions';
 import './HomePage.scss';
@@ -11,9 +10,7 @@ export type ControlProps = {
 	setScrollPosition?: (scrollPosition: number) => void;
 };
 
-type Props = {};
-
-const HomePage = (props: Props) => {
+const HomePage = () => {
 	return (
 		<div className='home'>
 			<HomeState>
@@ -37,4 +34,4 @@ const HomeContent = () => {
 	);
 };
 
-export default (props: Props) => DefaultPageTransition(HomePage);
+export default () => DefaultPageTransition(HomePage);

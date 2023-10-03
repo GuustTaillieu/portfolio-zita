@@ -7,10 +7,8 @@ import { useEffect, useRef } from 'react';
 import cursor from '../../customCursor';
 import { isInverted } from '../../transitions';
 
-type Props = {};
-
-const Navigation = (props: Props) => {
-	const [{ isMobile, isTablet }, data] = useDeviceSelectors(
+const Navigation = () => {
+	const [{ isMobile, isTablet }] = useDeviceSelectors(
 		window.navigator.userAgent
 	);
 	const stickeyElems = useRef<HTMLAnchorElement[]>([]);

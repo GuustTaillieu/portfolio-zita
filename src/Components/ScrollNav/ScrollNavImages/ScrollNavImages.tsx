@@ -11,7 +11,7 @@ type Props = {
 const ScrollNavImages = ({ scrollPosition, handleOnClick }: Props) => {
 	const galleryImagesContainer = useRef<HTMLDivElement>(null);
 	const galleryImages = useRef<HTMLDivElement[]>([]);
-	const [{ isMobile }, data] = useDeviceSelectors(window.navigator.userAgent);
+	const [{ isMobile }] = useDeviceSelectors(window.navigator.userAgent);
 
 	useEffect(() => {
 		galleryImages.current.forEach((item, index) => {

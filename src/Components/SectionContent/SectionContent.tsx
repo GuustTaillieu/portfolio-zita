@@ -16,7 +16,7 @@ const SectionContent = ({ scrollPosition }: ControlProps) => {
 	const [currentNavItem, setCurrentNavItem] = useState(SCROLL_NAV_ITEMS[0]);
 	const [showContent, setShowContent] = useState(true);
 	const { isDocked, setIsDocked } = useHomeState();
-	const [{ isMobile }, data] = useDeviceSelectors(window.navigator.userAgent);
+	const [{ isMobile }] = useDeviceSelectors(window.navigator.userAgent);
 
 	useEffect(() => {
 		setShowContent(false);

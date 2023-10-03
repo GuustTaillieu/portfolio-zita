@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react';
+import { useMemo } from 'react';
 import { motion } from 'framer-motion';
 import './SectionTextImage.scss';
 import { useDeviceSelectors } from 'react-device-detect';
@@ -11,7 +11,7 @@ type Props = {
 };
 
 const SectionTextImage = ({ title, imageSet, text, textFirst }: Props) => {
-	const [{ isMobile }, data] = useDeviceSelectors(window.navigator.userAgent);
+	const [{ isMobile }] = useDeviceSelectors(window.navigator.userAgent);
 	const flexDir = useMemo(() => {
 		if (isMobile) {
 			return 'column';

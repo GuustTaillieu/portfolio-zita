@@ -12,8 +12,6 @@ import SectionNextProject from '../../Components/ProjectSections/SectionNextProj
 import SectionTextImage from '../../Components/ProjectSections/SectionTextImage/SectionTextImage';
 import CloseButton from '../../Components/CloseButton/CloseButton';
 
-type Props = {};
-
 const ProjectPage = () => {
 	const { id } = useParams<{ id: string }>();
 	const navigate = useNavigate();
