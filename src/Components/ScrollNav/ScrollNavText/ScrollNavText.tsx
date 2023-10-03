@@ -38,7 +38,7 @@ const ScrollNavText = (props: Props) => {
 							className='scroll_nav_title_in'
 							onClick={props.handleOnClick}
 							ref={(el) => galleryTitles.current.push(el!)}
-							key={item.title}>
+							key={'text_' + item.title}>
 							<motion.h2
 								data-cursor='-inverse'
 								data-cursor-text='Click me!'

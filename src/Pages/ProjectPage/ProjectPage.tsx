@@ -31,7 +31,7 @@ const ProjectPage = () => {
 					backgroundImage: `url(${project.image})`,
 				}}
 				className='project_img'
-				key={project.name}
+				key={'header' + project.name}
 				onClick={() => navigate('/projects')}
 			/>
 			<CloseButton callback={() => navigate('/projects')} />
@@ -43,25 +43,32 @@ const ProjectPage = () => {
 				transition={{ duration: 0.5, ease: 'easeInOut' }}>
 				{project.name}
 			</motion.h2>
-			<SectionImageCenter image={project.image} />
+			<SectionImageCenter
+				key={'section-image-center-' + project.id}
+				image={project.image}
+			/>
 			<SectionImageText
+				key={'section-image-text-' + project.id}
 				image={project.image}
 				text={project.description}
 				title={project.name}
 			/>
-			<SectionFullWidthImage key={project.id} image={project.image} />
+			<SectionFullWidthImage
+				key={'section-full-width-image-' + project.id}
+				image={project.image}
+			/>
 			<SectionImageRow
-				key={project.id}
+				key={'section-image-row-' + project.id}
 				images={Array(3).fill(project.image)}
 			/>
 			<SectionTextImage
-				key={project.id}
+				key={'section-text-image-' + project.id}
 				image={project.image}
 				text={project.description}
 				title={project.name}
 			/>
 			<SectionNextProject
-				key={project.id}
+				key={'section-next-project-' + project.id}
 				currentProjectId={project.id}
 			/>
 		</motion.div>
