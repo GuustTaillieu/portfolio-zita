@@ -1,5 +1,6 @@
 @import '../../styles/fonts.scss';
 @import '../../styles/sizes.scss';
+@import '../../styles/colors.scss';
 
 nav {
 	position: fixed;
@@ -10,7 +11,7 @@ nav {
 	align-items: center;
 	justify-content: space-between;
 	width: $responsive-desktop;
-	z-index: 1000;
+	z-index: 999;
 
 	a {
 		text-decoration: none;
@@ -23,7 +24,13 @@ nav {
 			padding: 1rem;
 			font-family: $secondary-font;
 			font-size: $small-text;
-			color: darkgoldenrod;
+			color: $dark-text;
+			transition: color 0.2s ease-in-out;
+
+			&.inverted {
+				color: $light-text;
+				transition: color 0.2s ease-in-out 0.5s;
+			}
 		}
 	}
 }

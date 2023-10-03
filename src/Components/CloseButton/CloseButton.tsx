@@ -1,20 +1,25 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import anims from '../../animations';
 import './CloseButton.scss';
-import { FaTimesCircle } from 'react-icons/fa';
+import { FaArrowLeft } from 'react-icons/fa';
+import { useLocation } from 'react-router';
+import { isInverted } from '../../transitions';
 
 type Props = {
 	callback: () => void;
 };
 
 const CloseButton = ({ callback }: Props) => {
+	const location = useLocation();
+
 	return (
 		<motion.div
-			className='close-btn'
+			className={'close-btn' + isInverted(location.pathname)}
 			onClick={callback}
+			data-cursor-text=''
+			data-cursor='-exclusion'
 			layoutId='close-btn'>
-			<FaTimesCircle />
+			<FaArrowLeft />
 		</motion.div>
 	);
 };

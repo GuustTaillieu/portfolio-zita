@@ -30,8 +30,8 @@ const ImageTrack = (props: Props) => {
 	const boundries = useMemo(() => {
 		if (drag === 'x')
 			return {
-				right: 0 + window.innerWidth / 2,
-				left: -trackWidth,
+				right: window.innerWidth,
+				left: -trackWidth + window.innerWidth / 2,
 			};
 		else
 			return {
@@ -53,6 +53,7 @@ const ImageTrack = (props: Props) => {
 
 	return (
 		<motion.div
+			data-cursor='-drag'
 			className='image-track'
 			ref={carousel}
 			drag={drag}
@@ -64,7 +65,7 @@ const ImageTrack = (props: Props) => {
 				<TrackImage
 					project={project}
 					backgroundPositionX={backgroundPositionX}
-					key={project.id}
+					key={project.name}
 				/>
 			))}
 		</motion.div>

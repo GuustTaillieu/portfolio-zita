@@ -28,6 +28,7 @@ const SectionImageCenter = ({ image }: Props) => {
 				delayChildren: 0.5,
 			}}>
 			<motion.img
+				data-cursor='-exclusion'
 				src={image}
 				alt={'project image'}
 				style={{ opacity }}

@@ -29,4 +29,8 @@ const DefaultPageTransition = (
 	);
 };
 
-export { DefaultPageTransition };
+const invertedPages = ['/projects', '/projects/1'];
+const isInverted = (locationPath: string) =>
+	invertedPages.includes(locationPath) ? ' inverted' : '';
+
+export { DefaultPageTransition, isInverted };

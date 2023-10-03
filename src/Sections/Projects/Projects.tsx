@@ -27,7 +27,8 @@ function Projects({ showContent }: ContentProps) {
 				<motion.div
 					whileHover={{ x: 5 }}
 					whileTap={{ x: 5, scale: 0.9 }}
-					className='see-more_button'>
+					className='see-more_button'
+					data-cursor='-pointer'>
 					<Link to='/projects'>
 						See Projects
 						<span>

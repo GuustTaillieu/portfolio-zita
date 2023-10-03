@@ -10,6 +10,7 @@ type Props = {
 
 function TrackImage({ project, backgroundPositionX }: Props) {
 	const navigate = useNavigate();
+	const [clicking, setClicking] = React.useState(false);
 
 	return (
 		<motion.div
@@ -28,7 +29,10 @@ function TrackImage({ project, backgroundPositionX }: Props) {
 				duration: 0.5,
 				ease: 'easeInOut',
 			}}
-			onDoubleClick={() => navigate(`/projects/${project.id}`)}
+			onMouseDown={() => setClicking(true)}
+			onMouseMove={() => setClicking(false)}
+			onMouseUp={() => clicking && navigate(`/projects/${project.id}`)}
+			data-cursor-text='Click or Drag'
 		/>
 	);
 }

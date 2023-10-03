@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { motion, useMotionValue, useScroll, useTransform } from 'framer-motion';
+import { motion } from 'framer-motion';
 import './ProjectPage.scss';
 import { useNavigate, useParams } from 'react-router';
 import { PROJECTS } from '../ProjectsPage/projects-data';
@@ -9,8 +9,8 @@ import { DefaultPageTransition } from '../../transitions';
 import SectionImageCenter from '../../Components/ProjectSections/SectionImageCenter/SectionImageCenter';
 import SectionImageRow from '../../Components/ProjectSections/SectionImageRow/SectionImageRow';
 import SectionNextProject from '../../Components/ProjectSections/SectionNextProject/SectionNextProject';
-import { Link } from 'react-router-dom';
 import SectionTextImage from '../../Components/ProjectSections/SectionTextImage/SectionTextImage';
+import CloseButton from '../../Components/CloseButton/CloseButton';
 
 type Props = {};
 
@@ -26,16 +26,15 @@ const ProjectPage = () => {
 
 	return (
 		<motion.div className='project' key={'project-' + project.id}>
-			<Link to='/projects'>
-				<motion.div
-					style={{
-						backgroundImage: `url(${project.image})`,
-					}}
-					className='project_img'
-					key={project.name}
-					onDoubleClick={() => navigate('/projects')}
-				/>
-			</Link>
+			<motion.div
+				style={{
+					backgroundImage: `url(${project.image})`,
+				}}
+				className='project_img'
+				key={project.name}
+				onClick={() => navigate('/projects')}
+			/>
+			<CloseButton callback={() => navigate('/projects')} />
 			<motion.h2
 				className='project_title'
 				initial={{ opacity: 0, y: 60 }}
