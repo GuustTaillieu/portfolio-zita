@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import {} from 'react';
 import { motion } from 'framer-motion';
 import anims from '../../animations';
 import './ProjectsPage.scss';
@@ -6,8 +6,6 @@ import ImageTrack from './ImageTrack/ImageTrack';
 import { useNavigate } from 'react-router';
 import CloseButton from '../../Components/CloseButton/CloseButton';
 import { DefaultPageTransition } from '../../transitions';
-
-type Props = {};
 
 function ProjectsPage() {
 	const navigate = useNavigate();

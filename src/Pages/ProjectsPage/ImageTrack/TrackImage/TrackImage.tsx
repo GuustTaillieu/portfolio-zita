@@ -12,7 +12,7 @@ type Props = {
 };
 
 function TrackImage({ project, backgroundPositionX }: Props) {
-	const [{ isMobile }, data] = useDeviceSelectors(window.navigator.userAgent);
+	const [{ isMobile }] = useDeviceSelectors(window.navigator.userAgent);
 	const navigate = useNavigate();
 	const [clicking, setClicking] = React.useState(false);
 

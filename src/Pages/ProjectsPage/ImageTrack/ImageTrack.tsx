@@ -5,9 +5,7 @@ import { PROJECTS } from '../projects-data';
 import './ImageTrack.scss';
 import { useMobileOrientation } from 'react-device-detect';
 
-type Props = {};
-
-const ImageTrack = (props: Props) => {
+const ImageTrack = () => {
 	const { isLandscape } = useMobileOrientation();
 	const [trackWidth, setTrackWidth] = useState(0);
 	const [trackHeight, setTrackHeight] = useState(0);

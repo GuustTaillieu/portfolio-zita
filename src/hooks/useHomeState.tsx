@@ -6,9 +6,9 @@ type Props = {
 
 const HomeContext = createContext({
 	isDocked: false,
-	setIsDocked: (isDocked: boolean) => {},
+	setIsDocked: (_: boolean) => {},
 	projectToShow: null as number | null,
-	setProjectToShow: (projectToShow: number | null) => {},
+	setProjectToShow: (_: number | null) => {},
 });
 
 const HomeState = ({ children }: Props) => {
