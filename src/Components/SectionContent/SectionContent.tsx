@@ -32,7 +32,6 @@ const SectionContent = ({ scrollPosition }: ControlProps) => {
 			className={'section_content' + (isDocked ? ' docked' : '')}
 			variants={anims.sectionContentAnim}
 			initial='initial'
-			onClick={() => setIsDocked(!isDocked)}
 			animate={isDocked ? 'animate' : 'initial'}
 			transition={{
 				duration: anims.sectionContentAnim.animate.transition.duration,

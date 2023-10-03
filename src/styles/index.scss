@@ -1,6 +1,7 @@
 @import './colors.scss';
 @import './fonts.scss';
 @import './sizes.scss';
+@import './cursor.scss';
 
 *,
 *::before,
@@ -21,6 +22,8 @@ img {
 /* ============================== DEFAULT ================================*/
 #root {
 	background-color: $light-background;
+	width: 100vw;
+	min-height: 100vh;
 }
 
 body {

@@ -23,6 +23,7 @@ const SectionImageRow = ({ images }: Props) => {
 					style={{
 						backgroundImage: `url(${image})`,
 					}}
+					data-cursor='-exclusion'
 				/>
 			))}
 		</div>

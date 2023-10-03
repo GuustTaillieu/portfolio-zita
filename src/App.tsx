@@ -1,3 +1,4 @@
+import React, { useEffect } from 'react';
 import { AnimatePresence } from 'framer-motion';
 import Navigation from './Components/TopNav/TopNav';
 import './styles/app.scss';
@@ -12,6 +13,7 @@ import HomePage from './Pages/HomePage/HomePage';
 import ContactPage from './Pages/ContactPage/ContactPage';
 import ProjectsPage from './Pages/ProjectsPage/ProjectsPage';
 import ProjectPage from './Pages/ProjectPage/ProjectPage';
+import cursor from './customCursor';
 
 function App() {
 	return (
@@ -23,6 +25,11 @@ function App() {
 
 function AppRoutes() {
 	const location = useLocation();
+
+	useEffect(() => {
+		cursor.destroy();
+		cursor.init();
+	}, [location.pathname]);
 
 	return (
 		<>

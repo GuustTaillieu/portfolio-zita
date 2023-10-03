@@ -33,15 +33,15 @@ const ScrollNavText = (props: Props) => {
 				className='scroll_nav_title_outer'
 				ref={galleryTitlesContainer}>
 				{[...Array(4)].map((_) =>
-					SCROLL_NAV_ITEMS.sort(
-						(a, b) => a.scrollPosition - b.scrollPosition
-					).map((item) => (
+					SCROLL_NAV_ITEMS.toSorted().map((item) => (
 						<div
 							className='scroll_nav_title_in'
 							onClick={props.handleOnClick}
 							ref={(el) => galleryTitles.current.push(el!)}
 							key={item.title}>
 							<motion.h2
+								data-cursor='-inverse'
+								data-cursor-text='Click me!'
 								variants={anims.scrollNavTextAnim}
 								initial='initial'
 								animate='animate'

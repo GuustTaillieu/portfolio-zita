@@ -42,4 +42,14 @@ const SCROLL_NAV_ITEMS: ScrollNavItem[] = [
 	},
 ];
 
+declare global {
+	interface Array<T> {
+		toSorted(): T[];
+	}
+}
+
+SCROLL_NAV_ITEMS.toSorted = function () {
+	return this.sort((a, b) => a.scrollPosition - b.scrollPosition);
+};
+
 export default SCROLL_NAV_ITEMS;

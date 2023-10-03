@@ -28,11 +28,11 @@ const HomeContent = () => {
 
 	return (
 		<>
+			<SectionContent scrollPosition={scrollPosition} />
 			<ScrollNav
 				scrollPosition={scrollPosition}
 				setScrollPosition={setScrollPosition}
 			/>
-			<SectionContent scrollPosition={scrollPosition} />
 		</>
 	);
 };

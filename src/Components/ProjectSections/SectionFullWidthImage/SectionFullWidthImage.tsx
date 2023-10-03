@@ -24,6 +24,7 @@ const SectionFullWidthImage = ({ image }: Props) => {
 			data-type='full_width_image'
 			ref={sectionRef}>
 			<motion.div
+				data-cursor='-exclusion'
 				style={{
 					width: widthPercentage,
 					backgroundImage: `url(${image})`,

@@ -32,6 +32,7 @@ const SectionTextImage = ({ title, image, text, textFirst }: Props) => {
 				delayChildren: 0.5,
 			}}>
 			<motion.img
+				data-cursor='-exclusion'
 				src={image}
 				alt={title ?? 'project image'}
 				initial={{ opacity: 0, y: 40 }}
@@ -39,6 +40,7 @@ const SectionTextImage = ({ title, image, text, textFirst }: Props) => {
 				viewport={{ once: true, amount: 0.5 }}
 			/>
 			<motion.div
+				data-cursor='-exclusion'
 				className='project_section_text'
 				style={{ textAlign: textFirst ? 'right' : 'left' }}
 				initial={{ opacity: 0, y: 40 }}

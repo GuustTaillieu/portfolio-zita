@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { motion, useScroll } from 'framer-motion';
+import { motion } from 'framer-motion';
 import anims from '../../animations';
 import './ProjectsPage.scss';
 import ImageTrack from './ImageTrack/ImageTrack';

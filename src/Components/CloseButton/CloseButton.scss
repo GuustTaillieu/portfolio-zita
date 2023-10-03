@@ -2,18 +2,15 @@
 @import '../../styles/fonts.scss';
 
 .close-btn {
-	cursor: pointer;
 	position: absolute;
-	top: 4rem;
-	right: 4rem;
+	top: 6rem;
+	left: 4rem;
 	z-index: 100;
 	pointer-events: all;
+	color: $dark-text;
 	font-size: 2rem;
-	border-radius: 50%;
 
-	svg {
-		fill: antiquewhite;
-		background-color: black;
-		border-radius: 50%;
+	&.inverted {
+		color: $light-text;
 	}
 }
