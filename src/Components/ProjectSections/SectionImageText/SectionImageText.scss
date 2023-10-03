@@ -33,7 +33,7 @@
 	}
 }
 
-@media (width < $tablet-size) {
+@media screen and (width < $tablet-size) {
 	.project_section[data-type='image_text'] {
 		max-width: 90%;
 		padding-top: 3rem;

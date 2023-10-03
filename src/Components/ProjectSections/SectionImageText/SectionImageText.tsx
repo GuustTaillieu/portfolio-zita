@@ -1,7 +1,7 @@
 import React, { useMemo } from 'react';
 import { motion } from 'framer-motion';
 import './SectionImageText.scss';
-import { useDeviceSelectors } from 'react-device-detect';
+import { useMobileOrientation } from 'react-device-detect';
 
 type Props = {
 	title?: string;
@@ -11,10 +11,10 @@ type Props = {
 };
 
 const SectionImageText = ({ title, image, text, textFirst }: Props) => {
-	const [{ isMobile }, data] = useDeviceSelectors(window.navigator.userAgent);
+	const { isPortrait } = useMobileOrientation();
 
 	const flexDir = useMemo(() => {
-		if (isMobile) {
+		if (isPortrait) {
 			return 'column';
 		} else {
 			return textFirst ? 'row-reverse' : 'row';
