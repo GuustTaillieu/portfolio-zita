@@ -55,6 +55,10 @@ p {
 	font-size: $small-text;
 }
 
+img {
+	background-color: transparentize($color: white, $amount: 0.8);
+}
+
 /* ============================== MEDIA QUERIES ================================*/
 @media (width > $mobile-size) {
 	.mobile {

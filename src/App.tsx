@@ -9,11 +9,17 @@ import {
 	Routes,
 	useLocation,
 } from 'react-router-dom';
-import HomePage from './Pages/HomePage/HomePage';
-import ContactPage from './Pages/ContactPage/ContactPage';
-import ProjectsPage from './Pages/ProjectsPage/ProjectsPage';
-import ProjectPage from './Pages/ProjectPage/ProjectPage';
 import cursor from './customCursor';
+const LazyHomePage = React.lazy(() => import('./Pages/HomePage/HomePage'));
+const LazyContactPage = React.lazy(
+	() => import('./Pages/ContactPage/ContactPage')
+);
+const LazyProjectsPage = React.lazy(
+	() => import('./Pages/ProjectsPage/ProjectsPage')
+);
+const LazyProjectPage = React.lazy(
+	() => import('./Pages/ProjectPage/ProjectPage')
+);
 
 function App() {
 	return (
@@ -36,10 +42,38 @@ function AppRoutes() {
 			<Navigation />
 			<AnimatePresence initial={false} mode='wait'>
 				<Routes location={location} key={location.hash}>
-					<Route path='/' element={<HomePage />} />
-					<Route path='/contact' element={<ContactPage />} />
-					<Route path='/projects' element={<ProjectsPage />} />
-					<Route path='/projects/:id' element={<ProjectPage />} />
+					<Route
+						path='/'
+						element={
+							<React.Suspense>
+								<LazyHomePage />
+							</React.Suspense>
+						}
+					/>
+					<Route
+						path='/contact'
+						element={
+							<React.Suspense>
+								<LazyContactPage />
+							</React.Suspense>
+						}
+					/>
+					<Route
+						path='/projects'
+						element={
+							<React.Suspense>
+								<LazyProjectsPage />
+							</React.Suspense>
+						}
+					/>
+					<Route
+						path='/projects/:id'
+						element={
+							<React.Suspense>
+								<LazyProjectPage />
+							</React.Suspense>
+						}
+					/>
 				</Routes>
 			</AnimatePresence>
 		</>

@@ -20,7 +20,7 @@ function TrackImage({ project, backgroundPositionX }: Props) {
 		<motion.div
 			layout
 			style={{
-				backgroundImage: `url(${project.image})`,
+				backgroundImage: `image-set(url(${project.imageSet[0]}) 1x, url(${project.imageSet[1]}) 2x)`,
 				backgroundPositionX,
 			}}
 			className='project_img'

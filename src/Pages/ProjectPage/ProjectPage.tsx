@@ -28,14 +28,16 @@ const ProjectPage = () => {
 		<motion.div className='project' key={'project-' + project.id}>
 			<motion.div
 				style={{
-					backgroundImage: `url(${project.image})`,
+					backgroundImage: `image-set(
+						url(${project.imageSet[0]}) 1x,
+						url(${project.imageSet[1]}) 2x`,
 				}}
 				className='project_img'
 				key={'header' + project.name}
-				onClick={() => navigate('/projects')}
 			/>
 			<CloseButton callback={() => navigate('/projects')} />
 			<motion.h2
+				data-cursor='-exclusion'
 				className='project_title'
 				initial={{ opacity: 0, y: 60 }}
 				whileInView={{ opacity: 1, y: 0 }}
@@ -45,25 +47,25 @@ const ProjectPage = () => {
 			</motion.h2>
 			<SectionImageCenter
 				key={'section-image-center-' + project.id}
-				image={project.image}
+				imageSet={project.imageSet}
 			/>
 			<SectionImageText
 				key={'section-image-text-' + project.id}
-				image={project.image}
+				imageSet={project.imageSet}
 				text={project.description}
 				title={project.name}
 			/>
 			<SectionFullWidthImage
 				key={'section-full-width-image-' + project.id}
-				image={project.image}
+				imageSet={project.imageSet}
 			/>
 			<SectionImageRow
 				key={'section-image-row-' + project.id}
-				images={Array(3).fill(project.image)}
+				images={Array(3).fill(project.imageSet)}
 			/>
 			<SectionTextImage
 				key={'section-text-image-' + project.id}
-				image={project.image}
+				imageSet={project.imageSet}
 				text={project.description}
 				title={project.name}
 			/>

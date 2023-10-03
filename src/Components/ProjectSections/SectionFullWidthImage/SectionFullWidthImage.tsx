@@ -3,10 +3,10 @@ import { motion, useScroll, useTransform } from 'framer-motion';
 import './SectionFullWidthImage.scss';
 
 type Props = {
-	image: string;
+	imageSet: string[];
 };
 
-const SectionFullWidthImage = ({ image }: Props) => {
+const SectionFullWidthImage = ({ imageSet }: Props) => {
 	const sectionRef = useRef<HTMLDivElement>(null);
 	const { scrollYProgress } = useScroll({
 		target: sectionRef,
@@ -27,7 +27,7 @@ const SectionFullWidthImage = ({ image }: Props) => {
 				data-cursor='-exclusion'
 				style={{
 					width: widthPercentage,
-					backgroundImage: `url(${image})`,
+					backgroundImage: `image-set(url(${imageSet[0]}) 1x, url(${imageSet[1]}) 2x)`,
 				}}
 			/>
 		</div>
