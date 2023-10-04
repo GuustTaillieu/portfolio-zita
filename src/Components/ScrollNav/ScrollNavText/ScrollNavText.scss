@@ -38,3 +38,9 @@
 		}
 	}
 }
+
+@media screen and (height < 40rem) {
+	.scroll_nav_title {
+		top: calc(50% - 2rem);
+	}
+}
