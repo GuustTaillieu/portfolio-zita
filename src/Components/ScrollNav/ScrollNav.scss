@@ -9,7 +9,7 @@
 	transition: margin-left 0.5s cubic-bezier(0.76, 0, 0.24, 1) 0.5s;
 }
 
-@media screen and (min-width: $ultra-wide-size) {
+@media screen and (width > $ultra-wide-size) {
 	.scroll_nav.docked {
 		margin-left: 10rem;
 		transition: margin-left 0.5s cubic-bezier(0.76, 0, 0.24, 1);
